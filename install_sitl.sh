@@ -32,6 +32,14 @@ source ~/.bashrc
 # Adding sites to default locations
 echo "AbraDF=-15.839650568136552,-47.92712785889222,1042,30" >> ./Tools/autotest/locations.txt
 
+# Installing DroneKit
+sudo apt-get install python-pip python-dev
+pip install dronekit
+pip install dronekit-sitl
+
+
+
+
 # Running ----------------------------------------------------------------
 cd ArduCopter/
 ../Tools/autotest/sim_vehicle.py -L AbraDF --console --map
