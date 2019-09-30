@@ -99,13 +99,17 @@ def land():
 
 #############  MAIN PROGRAM  #############
 
+wp1 = LocationGlobalRelative(-15.83947745528681,-47.92709159655583,10) 
+wp2 = LocationGlobalRelative(-15.839604179895666,-47.926847217421304,10)
+wp3 = LocationGlobalRelative(-15.839684457811742,-47.92714524073613,10)
 
-wp1 = LocationGlobalRelative(-15.839489275460842,-47.926998878173094,10)
 
 vehicle = connectMyCopter()
 arm_and_takeoff(10)
 
 goto(wp1)
+goto(wp2)
+goto(wp3)
 
 land()
 
