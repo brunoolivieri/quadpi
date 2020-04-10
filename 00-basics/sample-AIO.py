@@ -14,6 +14,7 @@ import argparse
 
 
 def connectMyCopter():
+	print('[method] connectMyCopter()')
 
 	parser = argparse.ArgumentParser(description='commands')
 	parser.add_argument('--connect')
@@ -31,6 +32,8 @@ def connectMyCopter():
 	return vehicle
 
 def arm_and_takeoff(targetHeight):
+	print('[method] arm_and_takeoff()')
+
 	while vehicle.is_armable!=True:
 		print('Waiting vehicle be armable...')
 		time.sleep(1)
@@ -73,6 +76,7 @@ def get_distance_meters(targetLocation, currentLocation):
 	return math.sqrt((dLat*dLat)+(dLon*dLon))*1.113195e5
 
 def goto(targetLocation):
+	print('[method] goto()')
 
 	distanceToTargetLocation = get_distance_meters(targetLocation,vehicle.location.global_relative_frame)
 
@@ -88,7 +92,7 @@ def goto(targetLocation):
 	return None
 
 def land():
-
+	print('[method] Land()')
 	vehicle.mode = VehicleMode("LAND")
 	while vehicle.mode.name !='LAND':
 		print("Waiting to vehicle to enter LAND mode")
@@ -118,4 +122,4 @@ while True:
 
 vehicle.close()
 
-
+print('Script finished')
