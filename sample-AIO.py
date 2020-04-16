@@ -67,7 +67,6 @@ def arm_and_takeoff(targetHeight):
 
 	return None
 
-
 def get_distance_meters(targetLocation, currentLocation):
 
 	dLat = targetLocation.lat - currentLocation.lat

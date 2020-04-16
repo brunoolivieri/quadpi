@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    This script aims to test a connection to an UAV.
+    This script aims to test a connection to an MAVlink vehicle.
 
-    It relies on Dronekit above pymavlink to handle the mavlink connection. Only works with Python2.x
+    It relies on Dronekit above pymavlink to handle the mavlink connection. Only works with Python2.x (due to Dronekit)
 
 """
 
@@ -21,7 +21,7 @@ parser.add_argument("--connect", dest='connection_string', default=" --connect 1
 args = parser.parse_args()
 
 
-def connectMyCopter():
+def connect_my_vehicle():
     print('Trying to connect to Vehicle...')
     try:
         vehicle = dronekit.connect(args.connection_string, wait_ready=True)
@@ -38,11 +38,18 @@ def connectMyCopter():
 
 
 if __name__ == '__main__':
-    vehicle = connectMyCopter()
     
-    print('Closing vehicle...')
-    try:
-        vehicle.close()
-    except Exception as e:
-        print('Error on connection: ' + str(e))
-        sys.exit(1)  
+    vehicle = connect_my_vehicle()
+    if vehicle:
+        print('Vehicle connected!')
+        try:
+            print('Closing vehicle...')
+            vehicle.close()
+        except Exception as e:
+            print('Error when closing connection: ' + str(e))
+        finally:
+            print('Connection closed!')    
+        
+    print('Script finished.')
+
+    sys.exit(1)  
