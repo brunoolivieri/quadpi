@@ -19,7 +19,7 @@ import math
 from tabulate import tabulate
 
 parser = argparse.ArgumentParser(description="python test_conn_basic.py --connect IP:PORT")
-parser.add_argument("--connect", dest='connection_string', default=" --connect 127.0.0.1:14550", help="try: python test_conn_complete.py --connect 127.0.0.1:14550")
+parser.add_argument("--connect", dest='connection_string', default=" --connect 127.0.0.1:17171", help="try: python test_conn_complete.py --connect 127.0.0.1:14550")
 args = parser.parse_args()
 ABRADF_CONTROL_AREA = LocationGlobalRelative(-15.840643,-47.925915,0) 
 

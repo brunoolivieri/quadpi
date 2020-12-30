@@ -19,7 +19,7 @@ import math
 from tabulate import tabulate
 
 parser = argparse.ArgumentParser(description="python test_conn_basic.py --connect IP:PORT")
-parser.add_argument("--connect", dest='connection_string', default=" --connect 127.0.0.1:14550", help="try: python test_conn_complete.py --connect 127.0.0.1:14550")
+parser.add_argument("--connect", dest='connection_string', default=" --connect 127.0.0.1:17171", help="try: python test_conn_complete.py --connect 127.0.0.1:14550")
 args = parser.parse_args()
 ABRADF_CONTROL_AREA = LocationGlobalRelative(-15.840643,-47.925915,0) 
 ARMABLE_TIMEOUT = 10
@@ -165,6 +165,25 @@ def land(vehicle):
 
     return None
 
+def RTL(vehicle):
+
+    print('\nVehicle commanded to RTL... ', end = '')
+    vehicle.mode = VehicleMode("RTL")
+    time.sleep(1)
+    while vehicle.mode.name !='RTL':
+        print("Waiting to vehicle to enter RTL mode...")
+        time.sleep(1)
+    print("Vechicle in RTL mode!")
+
+    while True:
+        print("Current altitude: %s" % vehicle.location.global_relative_frame.alt)
+        if (vehicle.location.global_relative_frame.alt <=1):
+            print('Reached 1 meter above ground. Exiting from RTL() method.')
+            break
+        time.sleep(1)
+
+    return None
+
 def goto(vehicle, target_location):
 
     print('Going to %s' % str(target_location).split(':')[1].replace(',', ', '))
@@ -192,12 +211,12 @@ def travel_through_waypoints(vehicle, way_points):
 def select_way_points():
     wps = []
 
-    wp1 = LocationGlobalRelative(-15.83947745528681,-47.92709159655583,10) 
+    wp1 = LocationGlobalRelative(-15.840078, -47.927029,10) 
     wps.append(wp1)
-    wp2 = LocationGlobalRelative(-15.839604179895666,-47.926847217421304,10)
+    wp2 = LocationGlobalRelative(-15.839768, -47.926806,10)
     wps.append(wp2)
-    wp3 = LocationGlobalRelative(-15.839684457811742,-47.92714524073613,10)
-    wps.append(wp3)
+    #wp3 = LocationGlobalRelative(-15.839684457811742,-47.92714524073613,10)
+    #wps.append(wp3)
 
     return wps
 
@@ -209,7 +228,7 @@ if __name__ == '__main__':
         way_points = select_way_points()
         arm_and_takeoff(vehicle, 10)
         travel_through_waypoints(vehicle, way_points)    
-        land(vehicle)
+        RTL(vehicle)
         release_vehicle(vehicle)
 
     print('Script reached its end.\n')
