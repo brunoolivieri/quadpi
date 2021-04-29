@@ -30,7 +30,8 @@ echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 source ~/.bashrc
 
 # Adding sites to default locations
-echo "AbraDF=-15.839650568136552,-47.92712785889222,1042,30" >> ./Tools/autotest/locations.txt
+#echo "AbraDF=-15.839650568136552,-47.92712785889222,1042,30" >> ./Tools/autotest/locations.txt
+echo "AbraDF=-15.840081,-47.926642,1042,30" >> ./Tools/autotest/locations.txt
 
 # Installing DroneKit
 sudo apt-get install python-pip python-dev
