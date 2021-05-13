@@ -241,7 +241,7 @@ class Copter:
             mavutil.location(loc1_lat * 1e-7, loc1_lon * 1e-7),
             mavutil.location(loc2_lat * 1e-7, loc2_lon * 1e-7))
 
-    def connect(self, connection_string='udpin:127.0.0.1:17171'):
+    def connect(self, connection_string='udpin:127.0.0.1:17171', baud=115200):
         """Set the connection with the drone.
          Use ArduPilot dialect and enforce MAVLink2 usage.
          Set some default streamrate.
@@ -249,10 +249,11 @@ class Copter:
         os.environ['MAVLINK20'] = '1'
         self.mav = mavutil.mavlink_connection(
             connection_string,
-            retries=1000,
+            retries=10000,
             robust_parsing=True,
             source_system=250,
             source_component=250,
+            baud=baud,
             autoreconnect=True,
             dialect="ardupilotmega",
         )
@@ -1489,33 +1490,27 @@ def big_print(text):
 
 
 def main():
-    big_print("Get parameters")
-    copter = Copter()
+    big_print("Auto mission")
+    copter = Copter(sysid=10)
 
-    big_print("Let's connect on 127.0.0.1:17171")
-    # Assume that we are connecting to SITL on udp 14550 and mavrout sharing it to 17171
-    copter.connect()
+    big_print("Let's connect ...")
+    # Assume that we are connecting to SITL on udp 14550
+    copter.connect(connection_string='udpin:127.0.0.1:17171', baud=921600)
 
-    big_print("Let's change some message reception rate")
-    # We will change a single message receiption rate by using MESSAGE_INTERVAL.
-    # We start getting the current rate
-    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-    #    ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
-    # We set the new rate
-    #copter.set_message_rate_hz(ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT, 10)
-    # We check that it is done correctly
-    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-    #ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
-
-    big_print("Let's change some parameters")
-    print("RTL_ALT value %f" % copter.get_parameter("RTL_ALT"))
-    copter.set_parameters({"RTL_ALT": 2000})
-    print("RTL_ALT value %f" % copter.get_parameter("RTL_ALT"))
-    print("BATT_CAPACITY value %f" % copter.get_parameter("BATT_CAPACITY"))
-    #copter.set_parameters({"BATT_CAPACITY": 9999})
-    #print("BATT_CAPACITY value %f" % copter.get_parameter("BATT_CAPACITY"))
+    big_print("Let's wait ready to arm")
+    # We wait that can pass all arming check
+    copter.wait_ready_to_arm()
 
 
+    big_print("Let's arm the vehicle for 5 seconds")
+    copter.arm_vehicle()
+
+
+    time.sleep(5)
+
+    copter.disarm_vehicle()
+
+    
 
 if __name__ == "__main__":
     main()
