@@ -1489,87 +1489,33 @@ def big_print(text):
 
 
 def main():
-    big_print("Auto mission")
+    big_print("Get parameters")
     copter = Copter()
 
-    big_print("Let's connect on 127.0.0.1:14550")
-    # Assume that we are connecting to SITL on udp 14550
+    big_print("Let's connect on 127.0.0.1:17171")
+    # Assume that we are connecting to SITL on udp 14550 and mavrout sharing it to 17171
     copter.connect()
-
-    big_print("Let's wait ready to arm")
-    # We wait that can pass all arming check
-    copter.wait_ready_to_arm()
 
     big_print("Let's change some message reception rate")
     # We will change a single message receiption rate by using MESSAGE_INTERVAL.
     # We start getting the current rate
-    print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-        ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
+    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
+    #    ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
     # We set the new rate
-    copter.set_message_rate_hz(ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT, 10)
+    #copter.set_message_rate_hz(ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT, 10)
     # We check that it is done correctly
-    print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-        ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
+    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
+    #ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
 
     big_print("Let's change some parameters")
     print("RTL_ALT value %f" % copter.get_parameter("RTL_ALT"))
     copter.set_parameters({"RTL_ALT": 2000})
     print("RTL_ALT value %f" % copter.get_parameter("RTL_ALT"))
     print("BATT_CAPACITY value %f" % copter.get_parameter("BATT_CAPACITY"))
-    copter.set_parameters({"BATT_CAPACITY": 9999})
-    print("BATT_CAPACITY value %f" % copter.get_parameter("BATT_CAPACITY"))
+    #copter.set_parameters({"BATT_CAPACITY": 9999})
+    #print("BATT_CAPACITY value %f" % copter.get_parameter("BATT_CAPACITY"))
 
 
-    #input("Press Enter to continue...")
-    big_print("Let's create and write a mission")
-    # We will write manually a mission by defining some waypoint
-    # We start by initialising mavwp helper library
-    copter.init_wp()
-    # We get the home position to serve as reference for the mission and as waypoint 0.
-    last_home = copter.home_position_as_mav_location()
-    # On Copter, we need a takeoff ... for takeoff !
-    copter.add_wp_takeoff(last_home.lat, last_home.lng, 20)
-    copter.add_waypoint(last_home.lat - 0.0001, last_home.lng - 0.0000, 20)
-    copter.add_waypoint(last_home.lat - 0.0001, last_home.lng - 0.00015, 20) 
-    copter.add_waypoint(last_home.lat + 0.0001, last_home.lng - 0.00015, 20)
-    copter.add_waypoint(last_home.lat + 0.0001, last_home.lng - 0.0000, 20)
-    
-    # We add a RTL at the end.
-    copter.add_wp_rtl()
-    # We send everything to the drone
-    copter.send_all_waypoints()
-
-    big_print("Let's get the mission written")
-    # We get the number of mission waypoint in the drone and print the mission
-    wp_count = copter.get_all_waypoints()
-
-    #input("Press Enter to continue...")
-
-    big_print("Let's execute the mission")
-    # On ArduPilot, with copter < 4.1 we need to arm before going into Auto mode.
-    # We use GUIDED mode as the requirement are closed to AUTO one's
-    copter.change_mode("GUIDED")
-    # We wait that can pass all arming check
-    copter.wait_ready_to_arm()
-    copter.arm_vehicle()
-    # When armed, we change mode to AUTO
-    copter.change_mode("AUTO")
-    # As we don't have RC radio here, we trigger mission start with MAVLink.
-    copter.send_cmd(mavutil.mavlink.MAV_CMD_MISSION_START,
-                    1,  # ARM
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    target_sysid=copter.target_system,
-                    target_compid=copter.target_system,
-                    )
-    # We use the convenient function to track the mission progression
-    copter.wait_waypoint(0, wp_count - 1, timeout=500)
-    copter.wait_landed_and_disarmed(min_alt=2)
-    
 
 if __name__ == "__main__":
     main()
