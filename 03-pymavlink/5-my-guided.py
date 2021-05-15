@@ -153,12 +153,12 @@ class Copter:
     This class is a generic class that show some example on how to use Pymavlink to connect and control ArduPilot Copter drone.
     This is heavily based on ArduPilot Autotest framework : https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest. You can find there more utilities functions."""
 
-    def __init__(self, default_stream_rate=5, sysid=1, target_component=1):
+    def __init__(self, default_stream_rate=5, sysid=1):
         self.wp_received = {}
         self.mav = None
         self.streamrate = default_stream_rate
         self.target_system = sysid
-        self.target_component = target_component
+        self.target_component = 1
         self.heartbeat_interval_ms = 1000
         self.last_heartbeat_time_ms = None
         self.last_heartbeat_time_wc_s = 0
@@ -241,7 +241,7 @@ class Copter:
             mavutil.location(loc1_lat * 1e-7, loc1_lon * 1e-7),
             mavutil.location(loc2_lat * 1e-7, loc2_lon * 1e-7))
 
-    def connect(self, connection_string='udpin:127.0.0.1:17171'):
+    def connect(self, connection_string='udpin:0.0.0.0:14550'):
         """Set the connection with the drone.
          Use ArduPilot dialect and enforce MAVLink2 usage.
          Set some default streamrate.
@@ -251,8 +251,8 @@ class Copter:
             connection_string,
             retries=1000,
             robust_parsing=True,
-            source_system=250, #era 250 tacando 10 fica dentro do mesmo veiculo, como outro componente | funciona como os dois no ARMABLE...
-            source_component=250, #era 250
+            source_system=250,
+            source_component=250,
             autoreconnect=True,
             dialect="ardupilotmega",
         )
@@ -1151,35 +1151,21 @@ Also, ignores heartbeats not from our target system"""
         self.progress("Sending %d waypoints" % self.wploader.count())
         if self.wploader.count() == 0:
             return
-        foo = self.mav.waypoint_count_send(self.wploader.count())
-        print("| -->>> foo: {}".format(foo))
+        self.mav.waypoint_count_send(self.wploader.count())
         tstart = time.time()
         while True:
             now = time.time()
             if now - tstart > timeout:
                 self.progress("Failed to send Mission")
                 return
-            #msg = self.mav.recv_match(type = ['COMMAND_ACK'],blocking = True)
-            msg = self.mav.recv_match(type=["MISSION_REQUEST", "WAYPOINT_REQUEST"], blocking=True, timeout=100)
-            if "MISSION_REQUEST" in msg:
-                print("| -->>> É um request: {}".format(msg))
-                #input("MISSION_REQUEST  --->>> Press any key...")
-            else:
-                print("| -->>> ELSE -->> {}".format(msg))
-            # O ERRO ESTA AQUI
+            msg = self.mav.recv_match(type=["MISSION_REQUEST", "WAYPOINT_REQUEST"], blocking=True, timeout=3)
             if msg is None:
-                print("| -->>> msg IS NONE:  ")
                 continue
             if msg.seq >= self.wploader.count():
                 self.progress("Request for bad waypoint %u (max %u)" % (msg.seq, self.wploader.count()))
                 return
-            print("| -->>> sg.seq: {}".format(msg.seq))
-            
             wp = self.wploader.wp(msg.seq)
-            print("| -->>> wp: {}".format(wp))
-
             wp_send = self.wp_to_mission_item_int(wp)
-            print("| -->>> wp_send: {}".format(wp_send))
 
             self.mav.mav.send(wp_send)
             self.progress("Sent waypoint %u : %s" % (msg.seq, self.wploader.wp(msg.seq)))
@@ -1187,9 +1173,7 @@ Also, ignores heartbeats not from our target system"""
                 self.progress("Sent all %u waypoints" % self.wploader.count())
                 return
 
-            
-
-    def get_all_waypoints(self, timeout=600):
+    def get_all_waypoints(self, timeout=30):
         self.progress("Requesting Mission item count")
         self.mav.waypoint_request_list_send()
         tstart = time.time()
@@ -1505,84 +1489,72 @@ def big_print(text):
 
 
 def main():
-    big_print("Auto mission")
-    copter = Copter(sysid=10)
+    big_print("Welcome in pymavlink Copter example!")
+    copter = Copter()
 
-    big_print("Let's connect ...")
+    big_print("Let's connect")
     # Assume that we are connecting to SITL on udp 14550
-    copter.connect(connection_string='udpin:127.0.0.1:17171')
+    copter.connect()
 
     big_print("Let's wait ready to arm")
     # We wait that can pass all arming check
-    #copter.wait_ready_to_arm()
+    copter.wait_ready_to_arm()
 
-    #big_print("Let's change some message reception rate")
-    # We will change a single message receiption rate by using MESSAGE_INTERVAL.
-    # We start getting the current rate
-    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-    #    ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
-    # We set the new rate
-    #copter.set_message_rate_hz(ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT, 10)
-    # We check that it is done correctly
-    #print("MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT rate : %f" % copter.send_get_message_interval(
-    #    ardupilotmega.MAVLINK_MSG_ID_POSITION_TARGET_GLOBAL_INT))
+    big_print("Let's do some GUIDED movement")
+    # We will do some guided command
+    copter.change_mode("GUIDED")
+    copter.wait_ready_to_arm()
+    if not copter.armed():
+        copter.arm_vehicle()
+    # example of mavlink takeoff
+    copter.user_takeoff(11)
+    # example of waiting altitude target
+    copter.wait_altitude(10, 13, True)
+    # Now we will use a target setpoint
+    targetpos = copter.mav.location()
+    wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
+    wp_accuracy = wp_accuracy * 0.01  # cm to m
+    targetpos.lat = targetpos.lat + 0.001
+    targetpos.lng = targetpos.lng + 0.001
+    targetpos.alt = targetpos.alt + 5
+    copter.mav.mav.set_position_target_global_int_send(
+        0,  # timestamp
+        copter.target_system,  # target system_id
+        1,  # target component id
+        mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_VZ_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
+        mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
+        int(targetpos.lat * 1.0e7),  # lat
+        int(targetpos.lng * 1.0e7),  # lon
+        targetpos.alt,  # alt
+        0,  # vx
+        0,  # vy
+        0,  # vz
+        0,  # afx
+        0,  # afy
+        0,  # afz
+        0,  # yaw
+        0,  # yawrate
+    )
+    # Let's control that we are going to the right place
+    current_target = copter.get_current_target()
+    while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
+        current_target = copter.get_current_target()
 
-    #foo = input("1-Press Enter to continue...")
-    #big_print("Let's create and write a mission")
-    # We will write manually a mission by defining some waypoint
-    # We start by initialising mavwp helper library
-    copter.init_wp()
-    #input("2-Press Enter to continue...")
+    # Monitor that we are going to the right place
+    copter.wait_location(targetpos, accuracy=wp_accuracy, timeout=60,
+                         target_altitude=targetpos.alt,
+                         height_accuracy=2, minimum_duration=2)
+    # Get back to home
+    copter.do_RTL()
 
-    # We get the home position to serve as reference for the mission and as waypoint 0.
-    last_home = copter.home_position_as_mav_location()
-    # On Copter, we need a takeoff ... for takeoff !
-    #input("3-Press Enter to continue...")
-    copter.add_wp_takeoff(last_home.lat, last_home.lng, 20)
-    copter.add_waypoint(last_home.lat - 0.0001, last_home.lng - 0.0000, 20)
-    copter.add_waypoint(last_home.lat - 0.0001, last_home.lng - 0.00015, 20) 
-    copter.add_waypoint(last_home.lat + 0.0001, last_home.lng - 0.00015, 20)
-    copter.add_waypoint(last_home.lat + 0.0001, last_home.lng - 0.0000, 20)
-    # We add a RTL at the end.
-    copter.add_wp_rtl()
-
-    #input("5-Press Enter to continue...")
-    # We send everything to the drone
-    copter.send_all_waypoints(timeout=600)
-    
-    
-    input("6-Press Enter to continue...")
-    big_print("Let's get the mission written")
-    # We get the number of mission waypoint in the drone and print the mission
-    wp_count = copter.get_all_waypoints()
-
-    input("7-Press Enter to continue...")
-
-    #big_print("Let's execute the mission")
-    # On ArduPilot, with copter < 4.1 we need to arm before going into Auto mode.
-    # We use GUIDED mode as the requirement are closed to AUTO one's
-    #copter.change_mode("GUIDED")
-    # We wait that can pass all arming check
-    #copter.wait_ready_to_arm()
-    #copter.arm_vehicle()
-    # When armed, we change mode to AUTO
-    #copter.change_mode("AUTO")
-    # As we don't have RC radio here, we trigger mission start with MAVLink.
-    #copter.send_cmd(mavutil.mavlink.MAV_CMD_MISSION_START,
-                    # 1,  # ARM
-                    # 0,
-                    # 0,
-                    # 0,
-                    # 0,
-                    # 0,
-                    # 0,
-                    # target_sysid=copter.target_system,
-                    # target_compid=copter.target_system,
-                    # )
-    # We use the convenient function to track the mission progression
-    # copter.wait_waypoint(0, wp_count - 1, timeout=500)
-    # copter.wait_landed_and_disarmed(min_alt=2)
-    
 
 if __name__ == "__main__":
     main()
