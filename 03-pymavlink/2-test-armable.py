@@ -241,7 +241,7 @@ class Copter:
             mavutil.location(loc1_lat * 1e-7, loc1_lon * 1e-7),
             mavutil.location(loc2_lat * 1e-7, loc2_lon * 1e-7))
 
-    def connect(self, connection_string='udpin:127.0.0.1:17171', baud=115200):
+    def connect(self, connection_string='udpin:127.0.0.1:17171'):
         """Set the connection with the drone.
          Use ArduPilot dialect and enforce MAVLink2 usage.
          Set some default streamrate.
@@ -251,9 +251,8 @@ class Copter:
             connection_string,
             retries=10000,
             robust_parsing=True,
-            source_system=250,
-            source_component=250,
-            baud=baud,
+            source_system=10, #era 250 tacando 10 fica dentro do mesmo veiculo, como outro componente | funciona como os dois...
+            source_component=250, #era 250
             autoreconnect=True,
             dialect="ardupilotmega",
         )
@@ -1495,7 +1494,7 @@ def main():
 
     big_print("Let's connect ...")
     # Assume that we are connecting to SITL on udp 14550
-    copter.connect(connection_string='udpin:127.0.0.1:17171', baud=921600)
+    copter.connect(connection_string='udpin:127.0.0.1:17171')
 
     big_print("Let's wait ready to arm")
     # We wait that can pass all arming check
