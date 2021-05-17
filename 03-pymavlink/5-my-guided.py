@@ -1490,11 +1490,11 @@ def big_print(text):
 
 def main():
     big_print("Welcome in pymavlink Copter example!")
-    copter = Copter()
+    copter = Copter(sysid=10)
 
     big_print("Let's connect")
     # Assume that we are connecting to SITL on udp 14550
-    copter.connect()
+    copter.connect(connection_string='udpin:127.0.0.1:17171')
 
     big_print("Let's wait ready to arm")
     # We wait that can pass all arming check
