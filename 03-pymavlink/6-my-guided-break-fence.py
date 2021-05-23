@@ -1515,7 +1515,7 @@ def main():
     wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
     wp_accuracy = wp_accuracy * 0.01  # cm to m
     targetpos.lat = targetpos.lat - 0.0002
-    targetpos.lng = targetpos.lng - 0.0004
+    targetpos.lng = targetpos.lng - 0.0010
     targetpos.alt = targetpos.alt + 15
     copter.mav.mav.set_position_target_global_int_send(
         0,  # timestamp
@@ -1544,9 +1544,9 @@ def main():
         0,  # yawrate
     )
     # Let's control that we are going to the right place
-    current_target = copter.get_current_target()
-    while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
-        current_target = copter.get_current_target()
+    #current_target = copter.get_current_target()
+    #while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
+    #    current_target = copter.get_current_target()
 
     # Monitor that we are going to the right place
     copter.wait_location(targetpos, accuracy=wp_accuracy, timeout=60,
