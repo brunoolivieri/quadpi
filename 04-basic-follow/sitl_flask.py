@@ -60,6 +60,7 @@ import datetime
 # Json stuff
 import json
 from flask import Flask
+from flask import render_template
 #from flask import jsonify returns a json from a dict
 app = Flask(__name__)
 #######
@@ -1497,13 +1498,15 @@ Also, ignores heartbeats not from our target system"""
 ##########################
 
 
-
-
-
-
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('return.html', name='Hello, World! (index page)')    
+
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('return.html', name=name)    
 
 @app.route('/arm')
 def flask_arm():
@@ -1517,33 +1520,40 @@ def flask_arm():
 
     if not copter.armed():
         copter.arm_vehicle()
-
-    return "armed?"
+    if copter.armed():
+        return render_template('return.html', name='Vehicle armed')    
+    else:
+        return render_template('return.html', name='Vehicle ARMED armed')    
 
 @app.route('/takeoff')
 @app.route('/takeoff/<altitute>')
 def flask_takeoff(altitute=10):
     global copter
-    copter.user_takeoff(altitute)
-
-    return "take off!?!?"
+    copter.user_takeoff(int(altitute))
+    return render_template('return.html', name='Ordered to takeoff to ' + str(altitute))    
 
 
 @app.route('/rtl')
 def flask_rtl():
     global copter
     copter.do_RTL()
-    
-    return "RTL ?"
+    return render_template('return.html', name='Ordered to takeoff to RTL')    
 
 
-@app.route('/get_position')
+@app.route('/position')
 def flask_position():
     global copter
-    targetpos = copter.mav.location()
+    targetpos = copter.mav.location(relative_alt=True)
+    json_tmp = '{"id": 20, "lat":' + str(targetpos.lat) + ', "lng": ' + str(targetpos.lng) + ', "high": ' + str(targetpos.alt) + '}'
+    return render_template('return.html', name=json_tmp)    
+
+
+@app.route('/position_json')
+def flask_position_json():
+    global copter
+    targetpos = copter.mav.location(relative_alt=True)
     json_tmp = '{"id": 20, "lat":' + str(targetpos.lat) + ', "lng": ' + str(targetpos.lng) + ', "high": ' + str(targetpos.alt) + '}'
     return json.loads(json_tmp)
-
 
 #if __name__ == "__main__":
 #    main()
