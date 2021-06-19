@@ -58,12 +58,10 @@ import datetime
 
 
 # Json stuff
-#import json
-
+import json
 from flask import Flask
 from flask import render_template
-from flask import jsonify #returns a json from a dict
-from flask import json
+#from flask import jsonify returns a json from a dict
 app = Flask(__name__)
 #######
 
@@ -1554,17 +1552,15 @@ def flask_position():
     return render_template('return.html', name=json_tmp)    
 
 
+
+
 @app.route('/position_json')
 def flask_position_json():
     global copter
     targetpos = copter.mav.location(relative_alt=True)
-    json_tmp = '{"id": 11,"lat": ' + str(targetpos.lat) + ',"lng": ' + str(targetpos.lng) + ',"alt":' + str(targetpos.alt) + '}'
-    #return json.dumps(json_tmp)
-    #print(json_tmp)
-    #print(json
-    return json_tmp
-
+    json_tmp = '{"id": 20, "lat":' + str(targetpos.lat) + ', "lng": ' + str(targetpos.lng) + ', "high": ' + str(targetpos.alt) + '}'
+    return json.loads(json_tmp)
 
 #if __name__ == "__main__":
-print("Running MAIN!!!")
+#    main()
 
