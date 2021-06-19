@@ -60,11 +60,11 @@ import datetime
 # Json stuff
 #import json
 
-from flask import Flask
-from flask import render_template
-from flask import jsonify #returns a json from a dict
-from flask import json
-app = Flask(__name__)
+#from flask import Flask
+#from flask import render_template
+#from flask import jsonify #returns a json from a dict
+#from flask import json
+#app = Flask(__name__)
 #######
 
 import logging
@@ -1506,81 +1506,21 @@ Also, ignores heartbeats not from our target system"""
 
 ##########################
 
-
-@app.route('/')
-def hello_world():
-    return render_template('return.html', name='Hello, World! (index page)')    
-
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('return.html', name=name)    
-
-@app.route('/connect')
-def flask_connect():
-    global copter
-    copter = Copter(sysid=11)
-    # Assume that we are connecting to SITL on udp 14550
-    copter.connect(connection_string='udpin:127.0.0.1:14551')
-    return render_template('return.html', name='connected')  
-
-@app.route('/arm')
-def flask_arm():
-    global copter
-    copter.change_mode("GUIDED")
-    copter.wait_ready_to_arm()
-
-    if not copter.armed():
-        copter.arm_vehicle()
-    if copter.armed():
-        return render_template('return.html', name='Vehicle armed')    
-    else:
-        return render_template('return.html', name='Vehicle ARMED armed')    
-
-@app.route('/takeoff')
-@app.route('/takeoff/<altitute>')
-def flask_takeoff(altitute=10):
-    global copter
-    copter.user_takeoff(int(altitute))
-    return render_template('return.html', name='Ordered to takeoff to ' + str(altitute))    
-
-
-@app.route('/rtl')
-def flask_rtl():
-    global copter
-    copter.do_RTL()
-    return render_template('return.html', name='Ordered to takeoff to RTL')    
-
-
-@app.route('/position')
-def flask_position():
-    global copter
-    targetpos = copter.mav.location(relative_alt=True)
-    json_tmp = '{"id": 20, "lat":' + str(targetpos.lat) + ', "lng": ' + str(targetpos.lng) + ', "high": ' + str(targetpos.alt) + '}'
-    return render_template('return.html', name=json_tmp)    
-
-
-@app.route('/position_json')
-def flask_position_json():
-    global copter
-    targetpos = copter.mav.location(relative_alt=True)
-    json_tmp = '{"id": 11,"lat": ' + str(targetpos.lat) + ',"lng": ' + str(targetpos.lng) + ',"alt":' + str(targetpos.alt) + '}'
-    #return json.dumps(json_tmp)
-    #print(json_tmp)
-    #print(json
-    return json_tmp
-
-flask_connect()
-flask_arm()
-flask_takeoff(altitute=10)
+global copter
+copter = Copter(sysid=20)
+copter.connect(connection_string='udpin:127.0.0.1:14551')
+copter.change_mode("GUIDED")
+copter.wait_ready_to_arm()
+if not copter.armed():
+    copter.arm_vehicle()
+copter.user_takeoff(10)
 
 while True:
     try:
         with urllib.request.urlopen("http://192.168.0.11:5000/position_json") as url:
             data = json.loads(url.read())
             #pprint(data)
-            #print(type(data))
+            print(type(data))
             print(" master quad: " + str(data['id']) + " - lat: " + str(data['lat']) + " - lng: " + str(data['lng']) + " - alt: " + str(data['alt']) )
             # Now we will use a target setpoint
             targetpos = copter.mav.location()
