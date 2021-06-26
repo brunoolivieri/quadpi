@@ -73,9 +73,15 @@ import threading
 import time
 import urllib.request
 from pprint import pprint
+import json
+import configparser
 
-# Global Copter
+
+
+# Global Stuff
 copter = 0
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 
 
@@ -1504,45 +1510,53 @@ Also, ignores heartbeats not from our target system"""
                 return location(msg.lat_int * 1.0e-7, msg.lon_int * 1.0e-7, msg.alt, msg.yaw)
 
 
+def big_print(text):
+    print("##################################################################################")
+    print("########## %s  ##########" % text)
+    print("##################################################################################")
+
+
 ##########################
 
-global copter
-copter = Copter(sysid=20)
-copter.connect(connection_string='udpin:127.0.0.1:14551')
+copter = Copter(sysid=int(config['follower']['sysid']))
+copter.connect(connection_string=str(config['follower']['connection_string']))
 copter.change_mode("GUIDED")
-copter.wait_ready_to_arm()
-if not copter.armed():
-    copter.arm_vehicle()
-copter.user_takeoff(10)
+#copter.wait_ready_to_arm()
+#if not copter.armed():
+#    copter.arm_vehicle()
+#copter.user_takeoff(10)
+
 
 while True:
+    #big_print("entrando no while")
     try:
-        with urllib.request.urlopen("http://192.168.0.11:5000/position_json") as url:
+        with urllib.request.urlopen(str(config['follower']['master_json_url'])) as url:
             data = json.loads(url.read())
             #pprint(data)
-            print(type(data))
+            #print(type(data))
             print(" master quad: " + str(data['id']) + " - lat: " + str(data['lat']) + " - lng: " + str(data['lng']) + " - alt: " + str(data['alt']) )
             # Now we will use a target setpoint
             targetpos = copter.mav.location()
-            wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
-            wp_accuracy = wp_accuracy * 0.01  # cm to m
-            targetpos.lat = data['lat'] + 0.001
-            targetpos.lng = data['lng'] + 0.001
-            targetpos.alt = data['alt'] + 5
+            #wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
+            #wp_accuracy = wp_accuracy * 0.01  # cm to m
+            targetpos.lat = float(data['lat']) + 0.0001
+            targetpos.lng = float(data['lng']) - 0.0001
+            targetpos.alt = data['alt']  + 1 
             copter.mav.mav.set_position_target_global_int_send(
                 0,  # timestamp
                 copter.target_system,  # target system_id
                 1,  # target component id
-                mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
+                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+                #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VZ_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
-                mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE |
-                mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
-                mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
-                mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE, # |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
                 int(targetpos.lat * 1.0e7),  # lat
                 int(targetpos.lng * 1.0e7),  # lon
                 targetpos.alt,  # alt
@@ -1556,7 +1570,19 @@ while True:
                 0,  # yawrate
             )
 
-            time.sleep(1)
+            #big_print("mandei msg")
+            # Let's control that we are going to the right place
+            #current_target = copter.get_current_target()
+            #while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
+            #    current_target = copter.get_current_target()
+
+            #big_print("sai do loop")
+            # Monitor that we are going to the right place
+            #copter.wait_location(targetpos, accuracy=wp_accuracy, timeout=60,
+            #                    target_altitude=targetpos.alt,
+            #                    height_accuracy=2, minimum_duration=2)
+            #big_print("indo pro sleep")
+            time.sleep(2)
     except Exception as e:
         print(e)
         time.sleep(5)

@@ -57,24 +57,31 @@ from pymavlink.mavutil import location
 import datetime
 
 
-import configparser
-
-
 # Json stuff
 #import json
 
-from flask import Flask
-from flask import render_template
-from flask import jsonify #returns a json from a dict
-from flask import json
-app = Flask(__name__)
+#from flask import Flask
+#from flask import render_template
+#from flask import jsonify #returns a json from a dict
+#from flask import json
+#app = Flask(__name__)
 #######
+
+import logging
+import threading
+
+import time
+import urllib.request
+from pprint import pprint
+import json
+import configparser
+
+
 
 # Global Stuff
 copter = 0
 config = configparser.ConfigParser()
 config.read('config.ini')
-
 
 
 
@@ -1503,90 +1510,116 @@ Also, ignores heartbeats not from our target system"""
                 return location(msg.lat_int * 1.0e-7, msg.lon_int * 1.0e-7, msg.alt, msg.yaw)
 
 
+def big_print(text):
+    print("##################################################################################")
+    print("########## %s  ##########" % text)
+    print("##################################################################################")
+
+
 ##########################
 
+copter = Copter(sysid=int(config['follower']['sysid']))
+copter.connect(connection_string=str(config['follower']['connection_string']))
+#copter.change_mode("GUIDED")
+#copter.wait_ready_to_arm()
+#if not copter.armed():
+#    copter.arm_vehicle()
+#copter.user_takeoff(10)
 
 
+copter.change_mode("GUIDED")
+targetpos = copter.mav.location()
+targetpos.lat = targetpos.lat + 0.001
+targetpos.lng = targetpos.lng - 0.001
+targetpos.alt = targetpos.alt + 1 
+copter.mav.mav.set_position_target_global_int_send(
+    0,  # timestamp
+    copter.target_system,  # target system_id
+    1,  # target component id
+    mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+    #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_VZ_IGNORE |
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
+    mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE, # |
+    #mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+    #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
+    #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
+    int(targetpos.lat * 1.0e7),  # lat
+    int(targetpos.lng * 1.0e7),  # lon
+    targetpos.alt,  # alt
+    0,  # vx
+    0,  # vy
+    0,  # vz
+    0,  # afx
+    0,  # afy
+    0,  # afz
+    0,  # yaw
+    0,  # yawrate
+)
+time.sleep(5)
 
 
+copter.change_mode("FOLLOW")
+while True:
+    #big_print("entrando no while")
+    try:
+        with urllib.request.urlopen(str(config['follower']['master_json_url'])) as url:
+            data = json.loads(url.read())
+            #pprint(data)
+            #print(type(data))
+            print(" master quad: " + str(data['id']) + " - lat: " + str(data['lat']) + " - lng: " + str(data['lng']) + " - alt: " + str(data['alt']) )
+            # Now we will use a target setpoint
+            targetpos = copter.mav.location()
+            #wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
+            #wp_accuracy = wp_accuracy * 0.01  # cm to m
+            targetpos.lat = float(data['lat']) #+ 0.0001
+            targetpos.lng = float(data['lng']) #- 0.0001
+            targetpos.alt = data['alt'] # + 1 
+            copter.mav.mav.set_position_target_global_int_send(
+                0,  # timestamp
+                copter.target_system,  # target system_id
+                1,  # target component id
+                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+                #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_VZ_IGNORE |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE, # |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
+                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
+                int(targetpos.lat * 1.0e7),  # lat
+                int(targetpos.lng * 1.0e7),  # lon
+                targetpos.alt,  # alt
+                0,  # vx
+                0,  # vy
+                0,  # vz
+                0,  # afx
+                0,  # afy
+                0,  # afz
+                0,  # yaw
+                0,  # yawrate
+            )
 
+            #big_print("mandei msg")
+            # Let's control that we are going to the right place
+            #current_target = copter.get_current_target()
+            #while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
+            #    current_target = copter.get_current_target()
 
-
-@app.route('/')
-def hello_world():
-    return render_template('return.html', name='Hello, World! (index page)')    
-
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('return.html', name=name)    
-
-@app.route('/connect')
-def flask_connect():
-    global copter
-    copter = Copter(sysid=int(config['master']['sysid']))
-    # Assume that we are connecting to SITL on udp 14550
-    copter.connect(connection_string=str(config['master']['connection_string']))
-    return render_template('return.html', name='connected')  
-
-@app.route('/arm')
-def flask_arm():
-    global copter
-    copter.change_mode("GUIDED")
-    copter.wait_ready_to_arm()
-
-    if not copter.armed():
-        copter.arm_vehicle()
-    if copter.armed():
-        return render_template('return.html', name='Vehicle armed')    
-    else:
-        return render_template('return.html', name='Vehicle ARMED armed')    
-
-@app.route('/takeoff')
-@app.route('/takeoff/<altitute>')
-def flask_takeoff(altitute=10):
-    global copter
-    copter.user_takeoff(int(altitute))
-    return render_template('return.html', name='Ordered to takeoff to ' + str(altitute))    
-
-
-@app.route('/rtl')
-def flask_rtl():
-    global copter
-    copter.do_RTL()
-    return render_template('return.html', name='Ordered to takeoff to RTL')    
-
-
-@app.route('/position')
-def flask_position():
-    global copter
-    targetpos = copter.mav.location(relative_alt=True)
-    json_tmp = '{"id": 20, "lat":' + str(targetpos.lat) + ', "lng": ' + str(targetpos.lng) + ', "high": ' + str(targetpos.alt) + '}'
-    return render_template('return.html', name=json_tmp)    
-
-
-@app.route('/position_relative_json')
-def flask_position_json():
-    global copter
-    targetpos = copter.mav.location(relative_alt=True)
-    json_tmp = '{"id": 11,"lat": ' + str(targetpos.lat) + ',"lng": ' + str(targetpos.lng) + ',"alt":' + str(targetpos.alt) + '}'
-    #return json.dumps(json_tmp)
-    #print(json_tmp)
-    #print(json
-    return json_tmp
-
-@app.route('/position_absolute_json')
-def flask_position_relative_json():
-    global copter
-    targetpos = copter.mav.location(relative_alt=False)
-    json_tmp = '{"id": 11,"lat": ' + str(targetpos.lat) + ',"lng": ' + str(targetpos.lng) + ',"alt":' + str(targetpos.alt) + '}'
-    #return json.dumps(json_tmp)
-    #print(json_tmp)
-    #print(json
-    return json_tmp
-
-#if __name__ == "__main__":
-print("Running MAIN!!!")
-copter = Copter(sysid=int(config['master']['sysid']))
-copter.connect(connection_string=str(config['master']['connection_string']))
+            #big_print("sai do loop")
+            # Monitor that we are going to the right place
+            #copter.wait_location(targetpos, accuracy=wp_accuracy, timeout=60,
+            #                    target_altitude=targetpos.alt,
+            #                    height_accuracy=2, minimum_duration=2)
+            #big_print("indo pro sleep")
+            time.sleep(1)
+    except Exception as e:
+        print(e)
+        time.sleep(5)
+        pass
