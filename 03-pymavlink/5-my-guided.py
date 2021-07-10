@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 
 """
@@ -16,28 +17,7 @@
 """
 
 """
-    Pymavlink example usage with ArduPilot Copter SITL.
-    This expect that the SITL is launch with default parameters.
-    You can launch SITL from ArduPilot directory with :
-    sim_vehicle.py -v ArduCopter -w --console --map
-    Then from pymavlink/examples directory, launch this script :
-    python mavexample.py
-
-    The script will example :
-    - how to connect to the drone
-    - Wait for the drone to be ready
-    - Change some incomming message rate
-    - Get and change parameters
-    - Create and upload an auto mission
-    - Get back the mission in the drone
-    - Run and monitor an auto mission
-    - Make a takeoff in Guided mode
-    - Wait some target altitude
-    - Send some Position target in Guided mode
-    - Monitor the drone position
-    - Trigger a RTL and monitor the progress
-
-    Those are heavily based on the work done on ArduPilot Autotest framework : https://ardupilot.org/dev/docs/the-ardupilot-autotest-framework.html
+   This is heavily based on the work done on ArduPilot Autotest framework : https://ardupilot.org/dev/docs/the-ardupilot-autotest-framework.html
 """
 
 import copy
@@ -55,6 +35,24 @@ from pymavlink.rotmat import Vector3
 from pymavlink import mavwp
 from pymavlink.mavutil import location
 import datetime
+
+#############################################################
+import logging
+import threading
+
+import time
+import urllib.request
+from pprint import pprint
+import json
+import configparser
+
+# Global Stuff
+copter = 0
+config = configparser.ConfigParser()
+config.read('config.ini')
+#############################################################
+
+
 
 __license__ = "GPLv3}"
 
@@ -241,7 +239,7 @@ class Copter:
             mavutil.location(loc1_lat * 1e-7, loc1_lon * 1e-7),
             mavutil.location(loc2_lat * 1e-7, loc2_lon * 1e-7))
 
-    def connect(self, connection_string='udpin:0.0.0.0:14550'):
+    def connect(self, connection_string='udpin:127.0.0.1:17171',baudrate=115200):
         """Set the connection with the drone.
          Use ArduPilot dialect and enforce MAVLink2 usage.
          Set some default streamrate.
@@ -250,6 +248,7 @@ class Copter:
         self.mav = mavutil.mavlink_connection(
             connection_string,
             retries=1000,
+            baud=baudrate,
             robust_parsing=True,
             source_system=250,
             source_component=250,
@@ -1489,15 +1488,13 @@ def big_print(text):
 
 
 def main():
-    big_print("Welcome in pymavlink Copter example!")
-    copter = Copter(sysid=10)
+    big_print("Lets test GUIDED")
+    copter = Copter(sysid=int(config['uav_connection']['sysid']))
 
-    big_print("Let's connect")
-    # Assume that we are connecting to SITL on udp 14550
-    copter.connect(connection_string='udpin:127.0.0.1:17171')
+    big_print("Let's connect on " + str(config['uav_connection']['connection_string']))
+    copter.connect(connection_string=str(config['uav_connection']['connection_string']),baudrate=str(config['uav_connection']['baudrate']))
 
     big_print("Let's wait ready to arm")
-    # We wait that can pass all arming check
     copter.wait_ready_to_arm()
 
     big_print("Let's do some GUIDED movement")
@@ -1544,9 +1541,9 @@ def main():
         0,  # yawrate
     )
     # Let's control that we are going to the right place
-    current_target = copter.get_current_target()
-    while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
-        current_target = copter.get_current_target()
+    #current_target = copter.get_current_target()
+    #while current_target.lat != targetpos.lat and current_target.lng != targetpos.lng and current_target.alt != targetpos.alt:
+    #    current_target = copter.get_current_target()
 
     # Monitor that we are going to the right place
     copter.wait_location(targetpos, accuracy=wp_accuracy, timeout=60,
