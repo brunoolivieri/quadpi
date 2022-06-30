@@ -1534,19 +1534,23 @@ while True:
             data = json.loads(url.read())
             #pprint(data)
             #print(type(data))
-            print(" master quad: " + str(data['id']) + " - lat: " + str(data['lat']) + " - lng: " + str(data['lng']) + " - alt: " + str(data['alt']) )
+            print(">> master:   lat: " + str(data['lat']) + " - lng: " + str(data['lng']) + " - alt: " + str(data['alt']) )
             # Now we will use a target setpoint
-            targetpos = copter.mav.location()
+            targetpos = copter.mav.location(relative_alt=True)
             #wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
             #wp_accuracy = wp_accuracy * 0.01  # cm to m
-            targetpos.lat = float(data['lat']) + 0.0001
-            targetpos.lng = float(data['lng']) - 0.0001
-            targetpos.alt = data['alt']  + 1 
+            targetpos.lat = float(data['lat']) # + 0.00006
+            targetpos.lng = float(data['lng']) - 0.00008
+            if data['alt'] < 5:
+                targetpos.alt = int(5)
+            else:
+                targetpos.alt = int(data['alt']  + 2)
+            
             copter.mav.mav.set_position_target_global_int_send(
                 0,  # timestamp
                 copter.target_system,  # target system_id
                 1,  # target component id
-                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,
                 #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
@@ -1554,7 +1558,7 @@ while True:
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE, # |
-                #mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+                mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
                 #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
                 #mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE,
                 int(targetpos.lat * 1.0e7),  # lat
@@ -1569,7 +1573,7 @@ while True:
                 0,  # yaw
                 0,  # yawrate
             )
-
+            print(">> follower: lat: " + str(int(targetpos.lat * 1.0e7)) + " - lng: " + str(int(targetpos.lng * 1.0e7)) + " - alt: " + str(targetpos.alt) )
             #big_print("mandei msg")
             # Let's control that we are going to the right place
             #current_target = copter.get_current_target()

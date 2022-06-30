@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 """
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -1531,12 +1532,12 @@ copter.change_mode("GUIDED")
 targetpos = copter.mav.location()
 targetpos.lat = targetpos.lat + 0.001
 targetpos.lng = targetpos.lng - 0.001
-targetpos.alt = targetpos.alt + 1 
+targetpos.alt = targetpos.alt + 1
 copter.mav.mav.set_position_target_global_int_send(
     0,  # timestamp
     copter.target_system,  # target system_id
     1,  # target component id
-    mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+    mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,
     #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
     mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
     mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
@@ -1577,12 +1578,12 @@ while True:
             #wp_accuracy = wp_accuracy * 0.01  # cm to m
             targetpos.lat = float(data['lat']) #+ 0.0001
             targetpos.lng = float(data['lng']) #- 0.0001
-            targetpos.alt = data['alt'] # + 1 
+            targetpos.alt = data['alt'] # + 1
             copter.mav.mav.set_position_target_global_int_send(
                 0,  # timestamp
                 copter.target_system,  # target system_id
                 1,  # target component id
-                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,  
+                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,
                 #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
