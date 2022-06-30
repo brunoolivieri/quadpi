@@ -1539,6 +1539,7 @@ while True:
             targetpos = copter.mav.location(relative_alt=True)
             #wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
             #wp_accuracy = wp_accuracy * 0.01  # cm to m
+<<<<<<< HEAD
             targetpos.lat = float(data['lat']) # + 0.00006
             targetpos.lng = float(data['lng']) - 0.00008
             if data['alt'] < 5:
@@ -1546,11 +1547,20 @@ while True:
             else:
                 targetpos.alt = int(data['alt']  + 2)
             
+=======
+            targetpos.lat = float(data['lat']) + 0.000005
+            targetpos.lng = float(data['lng']) - 0.000005
+            targetpos.alt = data['alt']  + 2 
+>>>>>>> c2ab2a1fd8c95538ad1553b144366fd2c7239c63
             copter.mav.mav.set_position_target_global_int_send(
                 0,  # timestamp
                 copter.target_system,  # target system_id
                 1,  # target component id
+<<<<<<< HEAD
                 mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT_INT,
+=======
+                mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT,  
+>>>>>>> c2ab2a1fd8c95538ad1553b144366fd2c7239c63
                 #mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
                 mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
@@ -1586,7 +1596,7 @@ while True:
             #                    target_altitude=targetpos.alt,
             #                    height_accuracy=2, minimum_duration=2)
             #big_print("indo pro sleep")
-            time.sleep(2)
+            time.sleep(0.5)
     except Exception as e:
         print(e)
         time.sleep(5)
