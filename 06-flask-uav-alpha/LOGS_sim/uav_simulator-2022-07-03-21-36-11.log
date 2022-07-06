@@ -1,0 +1,18 @@
+2022-07-03 21:36:11,426: Drone 21: Starting drone 21 on http://192.168.1.21:5071...;
+2022-07-03 21:36:11,554: Drone 21: Drone 21 connected on http://192.168.1.21:5071.;
+2022-07-03 21:36:12,597: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.840314699999999', 'lng': '-47.926396399999994', 'alt': '-0.227', 'device': 'uav', 'type': '102', 'seq': 0, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:12,833: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:13,861: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.8403146', 'lng': '-47.9263961', 'alt': '-0.279', 'device': 'uav', 'type': '102', 'seq': 1, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:13,951: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:14,978: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.840314399999999', 'lng': '-47.926395799999995', 'alt': '-0.316', 'device': 'uav', 'type': '102', 'seq': 2, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:15,029: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:16,043: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.840314099999999', 'lng': '-47.9263954', 'alt': '-0.363', 'device': 'uav', 'type': '102', 'seq': 3, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:16,298: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:17,309: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.8403139', 'lng': '-47.926394699999996', 'alt': '-0.36', 'device': 'uav', 'type': '102', 'seq': 4, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:17,419: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:18,430: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.8403137', 'lng': '-47.926394099999996', 'alt': '-0.341', 'device': 'uav', 'type': '102', 'seq': 5, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:18,472: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:19,501: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.840313499999999', 'lng': '-47.926394099999996', 'alt': '-0.34700000000000003', 'device': 'uav', 'type': '102', 'seq': 6, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:19,616: Drone 21: Response from the groundstation: <Response [200]>;
+2022-07-03 21:36:20,628: Drone 21: Sending POST request with location to the groundstation on http://192.168.1.1:8000/update-info/: {'id': 21, 'lat': '-15.840313199999999', 'lng': '-47.9263937', 'alt': '-0.342', 'device': 'uav', 'type': '102', 'seq': 7, 'ip': 'http://192.168.1.21:5071/'};
+2022-07-03 21:36:20,921: Drone 21: Response from the groundstation: <Response [200]>;

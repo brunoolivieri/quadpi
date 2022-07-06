@@ -1,0 +1,2235 @@
+Running MAIN!!!
+ * Serving Flask app 'flask_uav' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.21:5071/ (Press CTRL+C to quit)
+Let's wait ready to arm
+AT 21:07:33: Waiting for ready to arm
+AT 21:07:33: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:07:34: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:07:34: Waiting for EKF value 831
+AT 21:07:34: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:07:34: EKF Flags OK
+AT 21:07:34: Waiting for GPS health
+AT 21:07:34: GPS healthy
+AT 21:07:34: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:34: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 525363637})
+AT 21:07:34: Took 0 seconds to become armable
+Let's create and write a mission
+AT 21:07:34: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:34: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 525559930})
+AT 21:07:34: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:34: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 525627490})
+AT 21:07:34: Sending 20 waypoints
+AT 21:07:34: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:35: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:36: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:37: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:38: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:39: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:40: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:41: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:42: AP: Mission upload timeout
+Let's wait ready to arm
+AT 21:07:56: Waiting for ready to arm
+AT 21:07:56: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:07:56: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:07:56: Waiting for EKF value 831
+AT 21:07:57: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:07:57: EKF Flags OK
+AT 21:07:57: Waiting for GPS health
+AT 21:07:57: GPS healthy
+AT 21:07:57: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:57: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 548363644})
+AT 21:07:57: Took 0 seconds to become armable
+Let's create and write a mission
+AT 21:07:57: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:57: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 548763653})
+AT 21:07:57: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:07:57: Polled home position (HOME_POSITION {latitude : -158403419, longitude : -479263182, altitude : 1050560, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 548827456})
+AT 21:07:57: Sending 20 waypoints
+AT 21:07:57: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:58: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:07:59: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:08:00: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840341899999999, y : -47.9263182, z : 1050.56, mission_type : 0}
+AT 21:08:05: AP: Mission upload timeout
+Let's wait ready to arm
+AT 21:08:28: Waiting for ready to arm
+AT 21:08:28: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:30: get_parameter(AHRS_EKF_TYPE): None192.168.1.1 - - [03/Jul/2022 21:08:34] "[33mGET /set_auto HTTP/1.1[0m" 404 -
+
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:36: Failed to send Mission
+Let's get the mission written
+AT 21:08:36: Requesting Mission item count
+AT 21:08:36: Got 0 waypoints to get
+Let's execute the mission
+AT 21:08:36: Drained 0 messages from mav (0.000000/s)
+AT 21:08:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+Let's wait ready to arm
+AT 21:08:38: Waiting for ready to arm
+AT 21:08:38: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: Changing mode to GUIDED
+AT 21:08:38: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None[2022-07-03 21:08:48,409] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 243, in flask_spiral
+    copter.change_mode("GUIDED")
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 624, in change_mode
+    self.do_set_mode_via_command_long(mode)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 610, in do_set_mode_via_command_long
+    self.run_cmd_do_set_mode(mode, timeout=10)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 599, in run_cmd_do_set_mode
+    timeout=timeout
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 569, in run_cmd_get_ack
+    raise TimeoutException("Did not get good COMMAND_ACK within %fs" % timeout)
+copter.TimeoutException: Did not get good COMMAND_ACK within 10.000000s
+192.168.1.1 - - [03/Jul/2022 21:08:48] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:08:59: Failed to send Mission
+Let's get the mission written
+AT 21:08:59: Requesting Mission item count
+AT 21:08:59: Got 0 waypoints to get
+Let's execute the mission
+AT 21:08:59: Drained 0 messages from mav (0.000000/s)
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: AP: Mode change to AUTO failed: initialisation failed
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: Changing mode to GUIDED
+AT 21:09:03: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000003s)
+AT 21:09:03: Got mode=4 want=4
+AT 21:09:03: Waiting for ready to arm
+AT 21:09:03: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:09:03: Long time to get parameter: 35.227704s
+AT 21:09:03: Waiting for EKF value 831
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:09:03: EKF Flags OK
+AT 21:09:03: Waiting for GPS health
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: GPS healthy
+AT 21:09:05: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 616163129})
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: Took 36 seconds to become armable
+Let's create and write a mission
+AT 21:09:06: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 617363108})
+AT 21:09:06: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None[2022-07-03 21:09:16,357] ERROR in app: Exception on /sample [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 136, in flask_sample
+    last_home = copter.home_position_as_mav_location()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 704, in home_position_as_mav_location
+    m = self.poll_home_position()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 690, in poll_home_position
+    quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 569, in run_cmd_get_ack
+    raise TimeoutException("Did not get good COMMAND_ACK within %fs" % timeout)
+copter.TimeoutException: Did not get good COMMAND_ACK within 10.000000s
+192.168.1.1 - - [03/Jul/2022 21:09:16] "[35m[1mGET /sample HTTP/1.1[0m" 500 -
+
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:23: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:24: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:25: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:26: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: AP: Mode change to AUTO failed: initialisation failed
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:27: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:28: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:29: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:30: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:31: AP: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+AT 21:09:31: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None[2022-07-03 21:09:38,280] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 200, in flask_spiral
+    copter.wait_ready_to_arm()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 941, in wait_ready_to_arm
+    self.wait_ekf_happy(timeout=timeout, require_absolute=require_absolute)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 978, in wait_ekf_happy
+    if (int(self.get_parameter('AHRS_EKF_TYPE')) == 10):
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 392, in get_parameter
+    return self.get_parameter_direct(*args, **kwargs)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 439, in get_parameter_direct
+    raise NotAchievedException("Failed to retrieve parameter (%s)" % name)
+copter.NotAchievedException: Failed to retrieve parameter (AHRS_EKF_TYPE)
+192.168.1.1 - - [03/Jul/2022 21:09:38] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:32: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : MOT_THST_HOVER, param_value : 0.20575086772441864, param_type : 9, param_count : 1176, param_index : 65535}
+AT 21:09:37: (MOT_THST_HOVER) != (AHRS_EKF_TYPE)
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : STAT_RUNTIME, param_value : 56373.0, param_type : 6, param_count : 1176, param_index : 65535}
+AT 21:09:39: (STAT_RUNTIME) != (AHRS_EKF_TYPE)
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None[2022-07-03 21:10:03,453] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 246, in flask_spiral
+    copter.wait_ready_to_arm()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 941, in wait_ready_to_arm
+    self.wait_ekf_happy(timeout=timeout, require_absolute=require_absolute)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 978, in wait_ekf_happy
+    if (int(self.get_parameter('AHRS_EKF_TYPE')) == 10):
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 392, in get_parameter
+    return self.get_parameter_direct(*args, **kwargs)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 439, in get_parameter_direct
+    raise NotAchievedException("Failed to retrieve parameter (%s)" % name)
+copter.NotAchievedException: Failed to retrieve parameter (AHRS_EKF_TYPE)
+192.168.1.1 - - [03/Jul/2022 21:10:03] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:09:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:10:03: get_parameter(AHRS_EKF_TYPE): None
+Let's wait ready to arm
+AT 21:10:50: Waiting for ready to arm
+AT 21:10:50: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : INS_ACC2SCAL_X, param_value : 1.0009551048278809, param_type : 9, param_count : 1176, param_index : 204}
+AT 21:10:51: (INS_ACC2SCAL_X) != (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : CIRCLE_RATE, param_value : 20.0, param_type : 9, param_count : 1176, param_index : 276}
+AT 21:10:51: (CIRCLE_RATE) != (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : ATC_RATE_FF_ENAB, param_value : 1.0, param_type : 2, param_count : 1176, param_index : 280}
+AT 21:10:51: (ATC_RATE_FF_ENAB) != (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : ATC_ACCEL_P_MAX, param_value : 125900.0, param_type : 9, param_count : 1176, param_index : 282}
+AT 21:10:51: (ATC_ACCEL_P_MAX) != (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : ATC_ANGLE_BOOST, param_value : 1.0, param_type : 2, param_count : 1176, param_index : 283}
+AT 21:10:51: (ATC_ANGLE_BOOST) != (AHRS_EKF_TYPE)
+AT 21:10:51: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:10:51: Waiting for EKF value 831
+AT 21:10:51: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:10:51: EKF Flags OK
+AT 21:10:51: Waiting for GPS health
+AT 21:10:51: GPS healthy
+AT 21:10:51: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)[2022-07-03 21:11:59,353] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 250, in flask_spiral
+    copter.change_mode("AUTO")
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 624, in change_mode
+    self.do_set_mode_via_command_long(mode)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 610, in do_set_mode_via_command_long
+    self.run_cmd_do_set_mode(mode, timeout=10)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 599, in run_cmd_do_set_mode
+    timeout=timeout
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 581, in run_cmd_get_ack
+    mavutil.mavlink.enums["MAV_RESULT"][m.result].name))
+ValueError: Expected MAV_RESULT_ACCEPTED got MAV_RESULT_FAILED
+192.168.1.1 - - [03/Jul/2022 21:11:59] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+
+AT 21:10:51: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 722765652})
+AT 21:10:52: Took 0 seconds to become armable
+Let's create and write a mission
+AT 21:10:52: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:10:52: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 723254938})
+AT 21:10:52: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:10:52: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 723325192})
+AT 21:10:52: Sending 20 waypoints
+AT 21:10:52: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:53: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:54: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:55: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:56: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:57: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:58: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:10:59: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840317299999999, y : -47.9264556, z : 1049.08, mission_type : 0}
+AT 21:11:00: AP: Mission upload timeout
+AT 21:11:53: Failed to send Mission
+Let's get the mission written
+AT 21:11:53: Requesting Mission item count
+AT 21:11:53: Got 0 waypoints to get
+Let's execute the mission
+AT 21:11:53: Drained 0 messages from mav (0.000000/s)
+AT 21:11:56: Changing mode to GUIDED
+AT 21:11:56: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:11:56: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000003s)
+AT 21:11:56: Got mode=4 want=4
+AT 21:11:56: Waiting for ready to arm
+AT 21:11:56: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:11:56: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:11:56: Waiting for EKF value 831
+AT 21:11:56: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:11:56: EKF Flags OK
+AT 21:11:56: Waiting for GPS health
+AT 21:11:57: GPS healthy
+AT 21:11:57: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:11:57: Polled home position (HOME_POSITION {latitude : -158403173, longitude : -479264556, altitude : 1049080, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 788257492})
+AT 21:11:57: Took 0 seconds to become armable
+AT 21:11:57: Arm motors with MAVLink cmd
+AT 21:11:57: Sending COMMAND_LONG to (21,1) (MAV_CMD_COMPONENT_ARM_DISARM) (p1=1.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:11:57: ACK received: COMMAND_ACK {command : 400, result : 0} (0.000003s)
+AT 21:11:57: Drained 0 messages from mav (0.000000/s)
+AT 21:11:58: Motors ARMED
+AT 21:11:58: Drained 0 messages from mav (0.000000/s)
+AT 21:11:59: Changing mode to AUTO
+AT 21:11:59: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=3.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:11:59: ACK received: COMMAND_ACK {command : 176, result : 4} (0.000001s)
+AT 21:12:01: AP: Mode change to AUTO failed: initialisation failed
+Let's wait ready to arm
+AT 21:12:02: Waiting for ready to arm
+AT 21:12:02: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:12:02: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:12:02: Waiting for EKF value 831
+AT 21:12:03: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:12:03: EKF Flags OK
+AT 21:12:03: Waiting for GPS health
+AT 21:12:03: GPS healthy
+AT 21:12:03: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:12:03: Polled home position (HOME_POSITION {latitude : -158403162, longitude : -479264623, altitude : 1048600, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 794754937})
+AT 21:12:04: Took 1 seconds to become armable
+Let's create and write a mission
+AT 21:12:04: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:12:04: Polled home position (HOME_POSITION {latitude : -158403162, longitude : -479264623, altitude : 1048600, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 795257525})
+AT 21:12:04: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:12:04: Polled home position (HOME_POSITION {latitude : -158403162, longitude : -479264623, altitude : 1048600, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 795325197})
+AT 21:12:04: Sending 20 waypoints
+AT 21:12:04: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840316199999998, y : -47.9264623, z : 1048.6, mission_type : 0}
+AT 21:12:05: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840316199999998, y : -47.9264623, z : 1048.6, mission_type : 0}
+AT 21:12:06: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840316199999998, y : -47.9264623, z : 1048.6, mission_type : 0}192.168.1.1 - - [03/Jul/2022 21:12:22] "GET /position_absolute_json HTTP/1.1" 200 -
+192.168.1.1 - - [03/Jul/2022 21:12:25] "GET /position_relative_json HTTP/1.1" 200 -
+192.168.1.1 - - [03/Jul/2022 21:12:29] "GET /position_absolute_json HTTP/1.1" 200 -
+[2022-07-03 21:13:08,672] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 250, in flask_spiral
+    copter.change_mode("AUTO")
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 624, in change_mode
+    self.do_set_mode_via_command_long(mode)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 610, in do_set_mode_via_command_long
+    self.run_cmd_do_set_mode(mode, timeout=10)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 599, in run_cmd_do_set_mode
+    timeout=timeout
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 581, in run_cmd_get_ack
+    mavutil.mavlink.enums["MAV_RESULT"][m.result].name))
+ValueError: Expected MAV_RESULT_ACCEPTED got MAV_RESULT_FAILED
+192.168.1.1 - - [03/Jul/2022 21:13:08] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+Running MAIN!!!
+ * Serving Flask app 'flask_uav' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.21:5071/ (Press CTRL+C to quit)
+Let's wait ready to arm
+AT 21:32:57: Waiting for ready to arm
+AT 21:32:57: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:32:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:32:57: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1176, param_index : 65535}
+AT 21:32:57: Waiting for EKF value 831
+AT 21:32:57: Wait EKF.flags: required:831 current:831 errors=0
+AT 21:32:57: EKF Flags OK
+AT 21:32:57: Waiting for GPS health
+AT 21:32:59: GPS healthy
+AT 21:32:59: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:32:59: Polled home position (HOME_POSITION {latitude : -158403065, longitude : -479264510, altitude : 1042470, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 253890008})
+AT 21:32:59: Took 1 seconds to become armable
+Let's create and write a mission
+AT 21:32:59: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:32:59: Polled home position (HOME_POSITION {latitude : -158403065, longitude : -479264510, altitude : 1042470, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 254392476})
+AT 21:32:59: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 21:32:59: Polled home position (HOME_POSITION {latitude : -158403065, longitude : -479264510, altitude : 1042470, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 254452487})
+AT 21:32:59: Sending 20 waypoints
+AT 21:32:59: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840306499999999, y : -47.926451, z : 1042.47, mission_type : 0}
+AT 21:33:00: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840306499999999, y : -47.926451, z : 1042.47, mission_type : 0}
+AT 21:33:05: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840306499999999, y : -47.926451, z : 1042.47, mission_type : 0}
+AT 21:33:06: Sent waypoint 0 : MISSION_ITEM {target_system : 21, target_component : 21, seq : 0, frame : 3, command : 16, current : 0, autocontinue : 0, param1 : 0, param2 : 0, param3 : 0, param4 : 0, x : -15.840306499999999, y : -47.926451, z : 1042.47, mission_type : 0}
+AT 21:33:07: AP: Mission upload timeout
+AT 21:33:28: AP: Flight plan received
+Let's wait ready to arm
+AT 21:33:33: Waiting for ready to arm
+AT 21:33:33: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 21:33:33: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:34: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:35: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:36: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:37: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:38: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:39: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:40: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:41: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:42: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:43: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:44: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:45: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:46: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:47: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:48: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:49: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:50: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:51: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:52: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:53: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : STAT_RUNTIME, param_value : 57794.0, param_type : 6, param_count : 1176, param_index : 65535}
+AT 21:33:54: (STAT_RUNTIME) != (AHRS_EKF_TYPE)
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:54: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:55: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:56: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:57: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:58: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:33:59: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:00: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: Failed to send Mission
+Let's get the mission written
+AT 21:34:01: Requesting Mission item count
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:01: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:02: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:03: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:04: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:05: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:06: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:07: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:08: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:09: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:10: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:11: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:12: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:13: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:14: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:15: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:16: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:17: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:18: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:19: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:20: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:21: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:22: get_parameter(AHRS_EKF_TYPE): None
+AT 21:34:23: get_parameter(AHRS_EKF_TYPE): None[2022-07-03 21:34:33,856] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 200, in flask_spiral
+    copter.wait_ready_to_arm()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 941, in wait_ready_to_arm
+    self.wait_ekf_happy(timeout=timeout, require_absolute=require_absolute)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 978, in wait_ekf_happy
+    if (int(self.get_parameter('AHRS_EKF_TYPE')) == 10):
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 392, in get_parameter
+    return self.get_parameter_direct(*args, **kwargs)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 439, in get_parameter_direct
+    raise NotAchievedException("Failed to retrieve parameter (%s)" % name)
+copter.NotAchievedException: Failed to retrieve parameter (AHRS_EKF_TYPE)
+192.168.1.1 - - [03/Jul/2022 21:34:33] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+[2022-07-03 21:34:47,059] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 246, in flask_spiral
+    copter.wait_ready_to_arm()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 946, in wait_ready_to_arm
+    m = self.poll_home_position()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 690, in poll_home_position
+    quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 569, in run_cmd_get_ack
+    raise TimeoutException("Did not get good COMMAND_ACK within %fs" % timeout)
+copter.TimeoutException: Did not get good COMMAND_ACK within 10.000000s
+192.168.1.1 - - [03/Jul/2022 21:34:47] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+Killed
+Running MAIN!!!
+ * Serving Flask app 'flask_uav' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.21:5071/ (Press CTRL+C to quit)
+192.168.1.1 - - [03/Jul/2022 21:37:01] "GET / HTTP/1.1" 200 -
+192.168.1.1 - - [03/Jul/2022 21:37:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2022-07-03 21:37:13,163] ERROR in app: Exception on /connect [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 29, in flask_connect
+    logger.log_info(f'Drone {args.uav_sysid}', f"Trying to connect with connection string: {str(args['master']['connection_string'])}")
+TypeError: 'Namespace' object is not subscriptable
+192.168.1.1 - - [03/Jul/2022 21:37:13] "[35m[1mGET /connect HTTP/1.1[0m" 500 -
+192.168.1.1 - - [03/Jul/2022 21:37:58] "[33mGET /position_json HTTP/1.1[0m" 404 -
+[2022-07-03 21:38:45,624] ERROR in app: Exception on /spiral [GET]
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pi/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pi/.local/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/pi/quadpi/06-flask-uav-alpha/blueprints/send_cmds_to_uav.py", line 205, in flask_spiral
+    copter.init_wp()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 1251, in init_wp
+    last_home = self.home_position_as_mav_location()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 704, in home_position_as_mav_location
+    m = self.poll_home_position()
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 690, in poll_home_position
+    quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 560, in run_cmd
+    self.run_cmd_get_ack(command, want_result, timeout, quiet=quiet)
+  File "/home/pi/quadpi/06-flask-uav-alpha/copter.py", line 569, in run_cmd_get_ack
+    raise TimeoutException("Did not get good COMMAND_ACK within %fs" % timeout)
+copter.TimeoutException: Did not get good COMMAND_ACK within 10.000000s
+192.168.1.1 - - [03/Jul/2022 21:38:45] "[35m[1mGET /spiral HTTP/1.1[0m" 500 -
+Killed
+Running MAIN!!!
+ * Serving Flask app 'flask_uav' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.21:5071/ (Press CTRL+C to quit)
