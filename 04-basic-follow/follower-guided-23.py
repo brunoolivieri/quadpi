@@ -1539,12 +1539,12 @@ while True:
             targetpos = copter.mav.location(relative_alt=True)
             #wp_accuracy = copter.get_parameter("WPNAV_RADIUS", attempts=2)
             #wp_accuracy = wp_accuracy * 0.01  # cm to m
-            targetpos.lat = float(data['lat']) # + 0.00006
+            targetpos.lat = float(data['lat']) + 0.00008
             targetpos.lng = float(data['lng']) - 0.00008
             if data['alt'] < 5:
                 targetpos.alt = int(5)
             else:
-                targetpos.alt = int(data['alt']  + 2)
+                targetpos.alt = int(data['alt']  + 3)
             
             copter.mav.mav.set_position_target_global_int_send(
                 0,  # timestamp
