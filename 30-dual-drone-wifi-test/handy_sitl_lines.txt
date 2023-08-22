@@ -1,0 +1,32 @@
+
+
+geocoder
+
+
+
+../Tools/autotest/sim_vehicle.py -I 22 --sysid 22 -N --out 192.168.0.50:55555 --speedup 1 -L AbraDF --out 127.0.0.1:17171
+
+
+../Tools/autotest/sim_vehicle.py -I 23 --sysid 23 -N --out 192.168.0.50:55555 --speedup 1 -L AbraDF --out 127.0.0.1:17172
+
+batreset
+
+export FLASK_APP=master.py
+Flask run
+
+wget http://127.0.0.1:5000/position_relative_json -O readme.txt
+
+
+../../sitl_sim/Tools/autotest/sim_vehicle.py -v ArduCopter -I 21 --sysid 21 -N --out 192.168.0.50:55555 --speedup 1 -L AbraDF --out 127.0.0.1:17171
+
+
+
+
+--------------------------
+Link test between 2 drones:
+
+stationary:
+sim_vehicle.py -v ArduCopter -I 21 --console --map --sysid 21 -N --speedup 1 -L AbraDF --out 127.0.0.1:17171 --out 127.0.0.1:55555
+
+mesurer
+sim_vehicle.py -v ArduCopter -I 22 --console --map --sysid 22 -N --speedup 1 -L AbraDF --out 127.0.0.1:17172 --out 127.0.0.1:55555
