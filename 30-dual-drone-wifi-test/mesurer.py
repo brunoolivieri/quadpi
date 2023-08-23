@@ -45,6 +45,8 @@ import math
 import os
 import sys
 import time
+import subprocess
+
 
 from pymavlink.dialects.v20 import ardupilotmega
 from MAVProxy.modules.lib import mp_util
@@ -1524,7 +1526,7 @@ if __name__ == "__main__":
     conf_experiment_sleeps = 5
     conf_experiment_high = 20
     conf_experiment_distance_between_tests = 10
-    conf_experiment_tests = 20
+    conf_experiment_tests = 5
     conf_experiment_heading = 0
     conf_experiment_speed = 5
 
@@ -1592,6 +1594,7 @@ if __name__ == "__main__":
             print('Roda experimento: ' + str(num))
             print('get_current_target: ' + str(copter.get_current_target()))
 
+            os.system('./net_test.sh ' + 'Loop_' + str(num))
 
             print("Changing the location...")
             copter.mav.mav.set_position_target_local_ned_send(
@@ -1612,7 +1615,7 @@ if __name__ == "__main__":
                 0,  # yaw
                 0,  # yawrate
             )
-            delay_to_movement = (conf_experiment_distance_between_tests // conf_experiment_speed) + 2
+            delay_to_movement = (conf_experiment_distance_between_tests // conf_experiment_speed) + 3
             print('Waiting navigation ...')
             time.sleep(delay_to_movement)
 

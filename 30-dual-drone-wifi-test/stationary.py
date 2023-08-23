@@ -44,6 +44,7 @@ import math
 import os
 import sys
 import time
+import subprocess
 
 from pymavlink.dialects.v20 import ardupilotmega
 from MAVProxy.modules.lib import mp_util
@@ -1599,6 +1600,9 @@ if __name__ == "__main__":
     print("Waiting to reach at least 15m...")
     copter.wait_altitude(10, 25, True, timeout=60)
 
+    subprocess.Popen('iperf3 -s', shell=True)
+
+    app.run(host="0.0.0.0", port=5000)
 
 
 

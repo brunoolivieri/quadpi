@@ -26,7 +26,7 @@ wget http://127.0.0.1:5000/position_relative_json -O readme.txt
 Link test between 2 drones:
 
 stationary:
-sim_vehicle.py -v ArduCopter -I 21 --console --map --sysid 21 -N --speedup 1 -L AbraDF --out 127.0.0.1:17171 --out 127.0.0.1:55555
+sim_vehicle.py -v ArduCopter -I 21 --console --sysid 21 -N --speedup 1 -L AbraDF --out 127.0.0.1:17171 --out 127.0.0.1:55555
 
 mesurer
-sim_vehicle.py -v ArduCopter -I 22 --console --map --sysid 22 -N --speedup 1 -L AbraDF --out 127.0.0.1:17172 --out 127.0.0.1:55555
+sim_vehicle.py -v ArduCopter -I 22 --console --sysid 22 -N --speedup 1 -L AbraDF --out 127.0.0.1:17172 --out 127.0.0.1:55555
