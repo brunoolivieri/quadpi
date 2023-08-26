@@ -1,0 +1,1744 @@
+--------------------------------------------------------------
+--------------------------------------------------------------
+Iniciando script MESURER.PY
+ 
+parametros do python de teste:
+ 
+ 
+ 
+Running Mesurer MAIN!!!
+Connecting to the vehicle...
+Asking GUIDED mode...
+AT 14:27:19: Drained 0 messages from mav (0.000000/s)
+AT 14:27:19: Changing mode to GUIDED
+AT 14:27:19: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 14:27:19: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000002s)
+AT 14:27:19: Got mode=4 want=4
+Waiting be ready to arm...
+AT 14:27:19: Waiting for ready to arm
+AT 14:27:19: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 14:27:19: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1193, param_index : 65535}
+AT 14:27:19: Waiting for EKF value 831
+AT 14:27:19: Wait EKF.flags: required:831 current:831 errors=0
+AT 14:27:19: EKF Flags OK
+AT 14:27:19: Waiting for GPS health
+AT 14:27:19: GPS healthy
+AT 14:27:19: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 14:27:19: Polled home position (HOME_POSITION {latitude : -158394054, longitude : -479271174, altitude : 1050900, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 323717897})
+AT 14:27:20: Took 0 seconds to become armable
+Ready to arm!!!
+Trying to arm...
+AT 14:27:20: Arm motors with MAVLink cmd
+AT 14:27:20: Sending COMMAND_LONG to (21,1) (MAV_CMD_COMPONENT_ARM_DISARM) (p1=1.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 14:27:20: ACK received: COMMAND_ACK {command : 400, result : 0} (0.000004s)
+AT 14:27:20: Drained 0 messages from mav (0.000000/s)
+AT 14:27:20: Motors ARMED
+Asking takeoff to 20 meters...
+AT 14:27:20: Sending COMMAND_LONG to (21,1) (MAV_CMD_NAV_TAKEOFF) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=20.000000)
+AT 14:27:20: ACK received: COMMAND_ACK {command : 22, result : 0} (0.000004s)
+AT 14:27:20: Ran command
+AT 14:27:20: Waiting for Altitude=19.00 with accuracy 6.00
+AT 14:27:20: Altitude=-0.00 (want 19.000000 +- 6.000000)
+AT 14:27:22: Altitude=-0.07 (want 19.000000 +- 6.000000)
+AT 14:27:23: Altitude=-0.10 (want 19.000000 +- 6.000000)
+AT 14:27:24: Altitude=0.71 (want 19.000000 +- 6.000000)
+AT 14:27:25: AP: EKF3 IMU0 MAG0 ground mag anomaly, yaw re-aligned
+AT 14:27:25: AP: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+AT 14:27:25: AP: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+AT 14:27:26: Altitude=3.66 (want 19.000000 +- 6.000000)
+AT 14:27:27: Altitude=6.97 (want 19.000000 +- 6.000000)
+AT 14:27:28: Altitude=10.27 (want 19.000000 +- 6.000000)
+AT 14:27:30: Altitude=13.67 (want 19.000000 +- 6.000000)
+AT 14:27:31: Altitude=16.66 (want 19.000000 +- 6.000000)
+AT 14:27:32: Altitude=18.69 (want 19.000000 +- 6.000000)
+AT 14:27:33: Attained Altitude=19.077000
+Waiting to reach at least 15m...
+AT 14:27:33: Waiting for Altitude=15.00 with accuracy 10.00
+AT 14:27:33: Altitude=19.35 (want 15.000000 +- 10.000000)
+AT 14:27:33: Attained Altitude=19.346000
+Changing the Heading...
+Sleeping for experiment loop...
+Roda experimento: (loop FOR iterator)1
+AT 14:27:38: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 337707, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_1
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-27m-38s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 41556 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   111 KBytes   911 Kbits/sec  78  
+[  4]   1.00-2.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   2.00-3.00   sec  24.2 KBytes   199 Kbits/sec  17  
+[  4]   3.00-4.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   4.00-5.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   5.00-6.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   6.00-7.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   7.00-8.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   8.00-9.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   9.00-10.00  sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]  10.00-11.00  sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]  11.00-16.86  sec  7.13 KBytes  9.96 Kbits/sec  5  
+[  4]  16.86-16.86  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  16.86-16.86  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  16.86-16.86  sec  0.00 Bytes  0.00 bits/sec  0  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-16.86  sec   271 KBytes   132 Kbits/sec  180.614 ms  105/184 (57%)  
+[  4] Sent 184 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34316 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   156 KBytes  1.27 Mbits/sec    0   33.9 KBytes       
+[  4]   1.00-2.00   sec  17.0 KBytes   139 Kbits/sec    5   11.3 KBytes       
+[  4]   2.00-3.00   sec  5.66 KBytes  46.3 Kbits/sec    3   8.48 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    0   8.48 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    1   2.83 KBytes       
+[  4]   5.00-6.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   7.00-8.00   sec  73.5 KBytes   602 Kbits/sec    8   4.24 KBytes       
+[  4]   8.00-9.00   sec  63.6 KBytes   521 Kbits/sec    3   7.07 KBytes       
+[  4]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    3   5.66 KBytes       
+[  4]  10.00-11.00  sec  63.6 KBytes   521 Kbits/sec    2   4.24 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    2   5.66 KBytes       
+[  4]  12.00-13.00  sec   132 KBytes  1.08 Mbits/sec    2   9.90 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    2   5.66 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    3   1.41 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   510 KBytes   279 Kbits/sec   34             sender
+[  4]   0.00-15.00  sec   395 KBytes   215 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34320 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   112 KBytes   915 Kbits/sec    4   11.3 KBytes       
+[  4]   1.00-2.00   sec  4.24 KBytes  34.7 Kbits/sec    3   1.41 KBytes       
+[  4]   2.00-3.00   sec  5.66 KBytes  46.3 Kbits/sec    5   2.83 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]   4.00-5.00   sec  79.2 KBytes   649 Kbits/sec    6   2.83 KBytes       
+[  4]   5.00-6.00   sec  5.66 KBytes  46.3 Kbits/sec    3   4.24 KBytes       
+[  4]   6.00-7.00   sec  66.5 KBytes   545 Kbits/sec    2   8.48 KBytes       
+[  4]   7.00-8.00   sec   109 KBytes   892 Kbits/sec    1   9.90 KBytes       
+[  4]   8.00-9.00   sec  52.3 KBytes   429 Kbits/sec    3   7.07 KBytes       
+[  4]   9.00-10.00  sec   146 KBytes  1.19 Mbits/sec    1   14.1 KBytes       
+[  4]  10.00-11.00  sec  80.6 KBytes   660 Kbits/sec    1   12.7 KBytes       
+[  4]  11.00-12.00  sec  22.6 KBytes   185 Kbits/sec    3   5.66 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   683 KBytes   373 Kbits/sec   35             sender
+[  4]   0.00-15.00  sec   602 KBytes   329 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=198 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=62.9 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=20.7 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=240 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=13.3 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 6ms
+rtt min/avg/max/mdev = 13.344/107.098/240.383/94.080 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=38.1 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.02 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=9.03 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.26 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=3.42 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8ms
+rtt min/avg/max/mdev = 2.261/11.773/38.140/13.388 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=46.9 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=9.47 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=40.5 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=231 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=343 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 5ms
+rtt min/avg/max/mdev = 9.469/134.192/343.060/130.351 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=56.8 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=8.14 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=36.4 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.47 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=17.7 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 4.468/24.707/56.792/19.495 ms
+
+
+ [log] são 2023-08-26-14h-29m-10s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_1
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)2
+AT 14:29:18: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 338207, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_2
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-29m-18s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 56575 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  99.8 KBytes   817 Kbits/sec  70  
+[  4]   1.00-2.00   sec  35.6 KBytes   292 Kbits/sec  25  
+[  4]   2.00-3.00   sec  25.7 KBytes   210 Kbits/sec  18  
+[  4]   3.00-4.00   sec  24.2 KBytes   199 Kbits/sec  17  
+[  4]   4.00-5.00   sec  15.7 KBytes   128 Kbits/sec  11  
+[  4]   5.00-6.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   6.00-7.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   7.00-8.00   sec  15.7 KBytes   128 Kbits/sec  11  
+[  4]   8.00-9.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   9.00-10.00  sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]  10.00-11.00  sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]  11.00-12.00  sec  18.5 KBytes   152 Kbits/sec  13  
+[  4]  12.00-13.00  sec  31.4 KBytes   257 Kbits/sec  22  
+[  4]  13.00-14.00  sec  21.4 KBytes   175 Kbits/sec  15  
+[  4]  14.00-15.00  sec  34.2 KBytes   280 Kbits/sec  24  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec   394 KBytes   215 Kbits/sec  39.269 ms  63/276 (23%)  
+[  4] Sent 276 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34326 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  50.9 KBytes   417 Kbits/sec    4   9.90 KBytes       
+[  4]   1.00-2.00   sec  8.48 KBytes  69.5 Kbits/sec    3   5.66 KBytes       
+[  4]   2.00-3.00   sec  48.1 KBytes   394 Kbits/sec    4   4.24 KBytes       
+[  4]   3.00-4.00   sec  9.90 KBytes  81.1 Kbits/sec    3   2.83 KBytes       
+[  4]   4.00-5.00   sec  9.90 KBytes  81.1 Kbits/sec    3   4.24 KBytes       
+[  4]   5.00-6.00   sec  15.6 KBytes   127 Kbits/sec    3   1.41 KBytes       
+[  4]   6.00-7.00   sec  2.83 KBytes  23.2 Kbits/sec    3   1.41 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]   8.00-9.00   sec  4.24 KBytes  34.8 Kbits/sec    3   1.41 KBytes       
+[  4]   9.00-10.00  sec  2.83 KBytes  23.2 Kbits/sec    1   2.83 KBytes       
+[  4]  10.00-11.00  sec  2.83 KBytes  23.2 Kbits/sec    3   2.83 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    2   1.41 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  13.00-14.00  sec  2.83 KBytes  23.2 Kbits/sec    1   2.83 KBytes       
+[  4]  14.00-15.00  sec  7.07 KBytes  57.9 Kbits/sec    3   2.83 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   165 KBytes  90.3 Kbits/sec   37             sender
+[  4]   0.00-15.00  sec  97.6 KBytes  53.3 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34330 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  52.3 KBytes   428 Kbits/sec    4   11.3 KBytes       
+[  4]   1.00-2.00   sec  4.24 KBytes  34.7 Kbits/sec    5   8.48 KBytes       
+[  4]   2.00-3.00   sec  5.66 KBytes  46.3 Kbits/sec    2   8.48 KBytes       
+[  4]   3.00-4.00   sec  2.83 KBytes  23.2 Kbits/sec    1   7.07 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    2   2.83 KBytes       
+[  4]   5.00-6.00   sec  32.5 KBytes   267 Kbits/sec    2   2.83 KBytes       
+[  4]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   8.00-9.00   sec  8.48 KBytes  69.5 Kbits/sec    3   5.66 KBytes       
+[  4]   9.00-10.00  sec  11.3 KBytes  92.7 Kbits/sec    2   5.66 KBytes       
+[  4]  10.00-11.00  sec  2.83 KBytes  23.2 Kbits/sec    2   2.83 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   120 KBytes  65.6 Kbits/sec   25             sender
+[  4]   0.00-15.00  sec  60.8 KBytes  33.2 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=442 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=8.67 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=16.0 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.48 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=3.62 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 1.475/94.401/442.289/174.015 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=46.1 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.25 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=23.0 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=64.1 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=13.5 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 6.253/30.576/64.073/21.462 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=75.7 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.95 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=35.3 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=42.2 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=18.2 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 6.945/35.662/75.663/23.547 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=55.3 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=511 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=40.4 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=10.7 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=47.2 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8ms
+rtt min/avg/max/mdev = 10.745/132.842/510.510/189.433 ms
+
+
+ [log] são 2023-08-26-14h-30m-29s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_2
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)3
+AT 14:30:37: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 338708, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_3
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-30m-37s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 49300 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec  15.7 KBytes   128 Kbits/sec  11  
+[  4]   2.00-3.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   3.00-4.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   4.00-5.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   5.00-6.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   6.00-7.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   7.00-8.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   8.00-9.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   9.00-15.69  sec  2.85 KBytes  3.49 Kbits/sec  2  
+[  4]  15.69-15.69  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  15.69-15.69  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  15.69-15.69  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  15.69-15.69  sec  0.00 Bytes  0.00 bits/sec  0  
+[  4]  15.69-15.69  sec  0.00 Bytes  0.00 bits/sec  0  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.69  sec   235 KBytes   123 Kbits/sec  316.911 ms  138/160 (86%)  
+[  4] Sent 160 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34336 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  46.7 KBytes   382 Kbits/sec    0   14.1 KBytes       
+[  4]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec    5   11.3 KBytes       
+[  4]   2.00-3.00   sec  0.00 Bytes  0.00 bits/sec    0   11.3 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    0   11.3 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    1   2.83 KBytes       
+[  4]   5.00-6.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    1   2.83 KBytes       
+[  4]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  46.7 KBytes  25.5 Kbits/sec    7             sender
+[  4]   0.00-15.00  sec  0.00 Bytes  0.00 bits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34340 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  50.9 KBytes   417 Kbits/sec    2   9.90 KBytes       
+[  4]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec    2   8.48 KBytes       
+[  4]   2.00-3.00   sec  0.00 Bytes  0.00 bits/sec    1   7.07 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    0   7.07 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    0   7.07 KBytes       
+[  4]   5.00-6.00   sec  0.00 Bytes  0.00 bits/sec    7   2.83 KBytes       
+[  4]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    0   2.83 KBytes       
+[  4]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  50.9 KBytes  27.8 Kbits/sec   13             sender
+[  4]   0.00-15.00  sec  5.66 KBytes  3.09 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=167 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=15.6 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=27.1 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=555 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=959 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8ms
+rtt min/avg/max/mdev = 15.649/344.947/959.303/364.081 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=918 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1127 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1136 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=809 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=338 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 82ms
+rtt min/avg/max/mdev = 338.488/865.589/1135.638/291.513 ms, pipe 2
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=13.7 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=39.1 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=125 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=32.5 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 34ms
+rtt min/avg/max/mdev = 13.678/52.528/124.851/42.783 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=134 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 1 received, 80% packet loss, time 153ms
+rtt min/avg/max/mdev = 134.368/134.368/134.368/0.000 ms
+
+
+ [log] são 2023-08-26-14h-33m-33s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_3
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)4
+AT 14:33:41: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 339207, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_4
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-33m-41s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 51858 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec  55.6 KBytes   456 Kbits/sec  39  
+[  4]   2.00-3.00   sec  58.5 KBytes   479 Kbits/sec  41  
+[  4]   3.00-4.00   sec  59.9 KBytes   491 Kbits/sec  42  
+[  4]   4.00-5.00   sec   158 KBytes  1.30 Mbits/sec  111  
+[  4]   5.00-6.00   sec   134 KBytes  1.10 Mbits/sec  94  
+[  4]   6.00-7.00   sec  95.5 KBytes   783 Kbits/sec  67  
+[  4]   7.00-8.00   sec  65.6 KBytes   537 Kbits/sec  46  
+[  4]   8.00-9.00   sec  64.2 KBytes   526 Kbits/sec  45  
+[  4]   9.00-10.00  sec   104 KBytes   853 Kbits/sec  73  
+[  4]  10.00-11.00  sec  64.2 KBytes   526 Kbits/sec  45  
+[  4]  11.00-12.00  sec   117 KBytes   958 Kbits/sec  82  
+[  4]  12.00-13.00  sec  64.2 KBytes   526 Kbits/sec  45  
+[  4]  13.00-14.00  sec  97.0 KBytes   794 Kbits/sec  68  
+[  4]  14.00-15.00  sec  59.9 KBytes   491 Kbits/sec  42  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.28 MBytes   718 Kbits/sec  27.554 ms  25/922 (2.7%)  
+[  4] Sent 922 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34346 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   175 KBytes  1.44 Mbits/sec    0   35.4 KBytes       
+[  4]   1.00-2.00   sec  90.5 KBytes   741 Kbits/sec    1   24.0 KBytes       
+[  4]   2.00-3.00   sec  0.00 Bytes  0.00 bits/sec    1   18.4 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    2   8.48 KBytes       
+[  4]   4.00-5.00   sec  72.1 KBytes   591 Kbits/sec    1   9.90 KBytes       
+[  4]   5.00-6.00   sec  67.9 KBytes   556 Kbits/sec    1   9.90 KBytes       
+[  4]   6.00-7.00   sec  70.7 KBytes   579 Kbits/sec    1   9.90 KBytes       
+[  4]   7.00-8.00   sec  74.9 KBytes   614 Kbits/sec    0   12.7 KBytes       
+[  4]   8.00-9.00   sec  63.6 KBytes   521 Kbits/sec    1   12.7 KBytes       
+[  4]   9.00-10.00  sec  63.6 KBytes   521 Kbits/sec    0   14.1 KBytes       
+[  4]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    0   17.0 KBytes       
+[  4]  11.00-12.00  sec  77.8 KBytes   638 Kbits/sec    1   14.1 KBytes       
+[  4]  12.00-13.00  sec  63.6 KBytes   521 Kbits/sec    2   8.48 KBytes       
+[  4]  13.00-14.00  sec  63.6 KBytes   521 Kbits/sec    2   5.66 KBytes       
+[  4]  14.00-15.00  sec  63.6 KBytes   521 Kbits/sec    2   5.66 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   947 KBytes   517 Kbits/sec   15             sender
+[  4]   0.00-15.00  sec   809 KBytes   442 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34350 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  87.7 KBytes   718 Kbits/sec    3   2.83 KBytes       
+[  4]   1.00-2.00   sec  72.1 KBytes   590 Kbits/sec    2   4.24 KBytes       
+[  4]   2.00-3.00   sec  59.4 KBytes   487 Kbits/sec    1   7.07 KBytes       
+[  4]   3.00-4.00   sec  58.0 KBytes   475 Kbits/sec    1   9.90 KBytes       
+[  4]   4.00-5.00   sec  60.8 KBytes   498 Kbits/sec    0   12.7 KBytes       
+[  4]   5.00-6.00   sec  50.9 KBytes   417 Kbits/sec    1   12.7 KBytes       
+[  4]   6.00-7.00   sec  72.1 KBytes   591 Kbits/sec    1   12.7 KBytes       
+[  4]   7.00-8.00   sec  74.9 KBytes   614 Kbits/sec    0   14.1 KBytes       
+[  4]   8.00-9.00   sec  60.8 KBytes   498 Kbits/sec    1   12.7 KBytes       
+[  4]   9.00-10.00  sec  67.9 KBytes   556 Kbits/sec    2   11.3 KBytes       
+[  4]  10.00-11.00  sec  48.1 KBytes   394 Kbits/sec    0   14.1 KBytes       
+[  4]  11.00-12.00  sec  24.0 KBytes   197 Kbits/sec    5   11.3 KBytes       
+[  4]  12.00-13.00  sec  63.6 KBytes   522 Kbits/sec    2   5.66 KBytes       
+[  4]  13.00-14.00  sec  63.6 KBytes   521 Kbits/sec    0   9.90 KBytes       
+[  4]  14.00-15.00  sec  50.9 KBytes   417 Kbits/sec    1   8.48 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   915 KBytes   500 Kbits/sec   20             sender
+[  4]   0.00-15.00  sec   843 KBytes   460 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=53.4 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.70 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=4.77 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=7.80 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=8.19 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 3.703/15.579/53.435/19.005 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=13.0 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=19.2 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.93 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=3.31 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=2.85 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 2.854/8.257/19.178/6.693 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.64 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.03 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=10.5 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=44.1 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.54 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.026/12.570/44.106/16.135 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=21.4 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.84 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=8.59 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=19.1 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=11.8 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 6.835/13.541/21.365/5.733 ms
+
+
+ [log] são 2023-08-26-14h-34m-49s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_4
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)5
+AT 14:34:57: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 339708, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_5
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-34m-57s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 58557 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.01   sec   117 KBytes   951 Kbits/sec  82  
+[  4]   1.01-2.00   sec   128 KBytes  1.06 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  10.00-11.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  11.00-12.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  12.00-13.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  13.00-14.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  14.00-15.00  sec   128 KBytes  1.05 Mbits/sec  90  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.86 MBytes  1.04 Mbits/sec  7.213 ms  25/1339 (1.9%)  
+[  4] Sent 1339 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34356 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   332 KBytes  2.72 Mbits/sec    0   41.0 KBytes       
+[  4]   1.00-2.00   sec   225 KBytes  1.84 Mbits/sec    1   36.8 KBytes       
+[  4]   2.00-3.00   sec   359 KBytes  2.94 Mbits/sec    0   43.8 KBytes       
+[  4]   3.00-4.00   sec   303 KBytes  2.48 Mbits/sec    0   45.2 KBytes       
+[  4]   4.00-5.00   sec   250 KBytes  2.05 Mbits/sec    0   48.1 KBytes       
+[  4]   5.00-6.00   sec   283 KBytes  2.32 Mbits/sec    2   35.4 KBytes       
+[  4]   6.00-7.00   sec   325 KBytes  2.66 Mbits/sec    0   46.7 KBytes       
+[  4]   7.00-8.00   sec   339 KBytes  2.78 Mbits/sec    0   50.9 KBytes       
+[  4]   8.00-9.00   sec   212 KBytes  1.74 Mbits/sec    1   29.7 KBytes       
+[  4]   9.00-10.00  sec   423 KBytes  3.46 Mbits/sec    0   46.7 KBytes       
+[  4]  10.00-11.00  sec   239 KBytes  1.96 Mbits/sec    0   50.9 KBytes       
+[  4]  11.00-12.00  sec   255 KBytes  2.09 Mbits/sec    0   50.9 KBytes       
+[  4]  12.00-13.00  sec   339 KBytes  2.78 Mbits/sec    0   53.7 KBytes       
+[  4]  13.00-14.00  sec   445 KBytes  3.65 Mbits/sec    0   59.4 KBytes       
+[  4]  14.00-15.00  sec   451 KBytes  3.70 Mbits/sec    0   65.0 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  4.67 MBytes  2.61 Mbits/sec    4             sender
+[  4]   0.00-15.00  sec  4.49 MBytes  2.51 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34360 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   426 KBytes  3.49 Mbits/sec    0   48.1 KBytes       
+[  4]   1.00-2.00   sec   414 KBytes  3.39 Mbits/sec    0   63.6 KBytes       
+[  4]   2.00-3.00   sec   318 KBytes  2.61 Mbits/sec    1   53.7 KBytes       
+[  4]   3.00-4.00   sec   411 KBytes  3.37 Mbits/sec    0   62.2 KBytes       
+[  4]   4.00-5.00   sec   358 KBytes  2.93 Mbits/sec    0   65.0 KBytes       
+[  4]   5.00-6.00   sec   346 KBytes  2.84 Mbits/sec    0   65.0 KBytes       
+[  4]   6.00-7.00   sec   420 KBytes  3.44 Mbits/sec    0   65.0 KBytes       
+[  4]   7.00-8.00   sec   293 KBytes  2.40 Mbits/sec    2   22.6 KBytes       
+[  4]   8.00-9.00   sec   318 KBytes  2.61 Mbits/sec    0   41.0 KBytes       
+[  4]   9.00-10.00  sec   318 KBytes  2.61 Mbits/sec    0   45.2 KBytes       
+[  4]  10.00-11.00  sec   318 KBytes  2.61 Mbits/sec    0   50.9 KBytes       
+[  4]  11.00-12.00  sec   324 KBytes  2.65 Mbits/sec    0   55.1 KBytes       
+[  4]  12.00-13.00  sec   468 KBytes  3.84 Mbits/sec    0   59.4 KBytes       
+[  4]  13.00-14.00  sec   318 KBytes  2.60 Mbits/sec    1   50.9 KBytes       
+[  4]  14.00-15.00  sec   198 KBytes  1.62 Mbits/sec    3   38.2 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  5.13 MBytes  2.87 Mbits/sec    7             sender
+[  4]   0.00-15.00  sec  4.94 MBytes  2.76 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=51.0 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.56 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=6.09 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=9.22 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=4.81 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.557/14.544/51.044/18.414 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=51.3 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.32 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=11.8 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.80 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=6.45 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.801/14.929/51.324/18.513 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.34 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.03 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=5.36 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.33 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=6.97 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.329/4.203/6.967/2.158 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=41.0 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.78 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=38.1 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.83 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=32.2 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 2.829/24.179/41.035/16.124 ms
+
+
+ [log] são 2023-08-26-14h-36m-03s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_5
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)6
+AT 14:36:11: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 340207, coordinate_frame : 0, type_mask : 65016, lat_int : -158394054, lon_int : -479271174, alt : 1070.9000244140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839405,lon=-47.927117,alt=1070.9
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_6
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-36m-11s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 57284 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  10.00-11.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  11.00-12.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  12.00-13.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  13.00-14.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  14.00-15.00  sec   128 KBytes  1.05 Mbits/sec  90  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.86 MBytes  1.04 Mbits/sec  6.945 ms  5/1339 (0.37%)  
+[  4] Sent 1339 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34366 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   359 KBytes  2.94 Mbits/sec    1   42.4 KBytes       
+[  4]   1.00-2.00   sec   158 KBytes  1.30 Mbits/sec    0   36.8 KBytes       
+[  4]   2.00-3.00   sec   288 KBytes  2.36 Mbits/sec    0   45.2 KBytes       
+[  4]   3.00-4.00   sec   281 KBytes  2.30 Mbits/sec    1   39.6 KBytes       
+[  4]   4.00-5.00   sec   146 KBytes  1.19 Mbits/sec    0   39.6 KBytes       
+[  4]   5.00-6.00   sec   153 KBytes  1.25 Mbits/sec    0   45.2 KBytes       
+[  4]   6.00-7.00   sec   252 KBytes  2.06 Mbits/sec    0   45.2 KBytes       
+[  4]   7.00-8.00   sec   279 KBytes  2.28 Mbits/sec    0   45.2 KBytes       
+[  4]   8.00-9.00   sec   494 KBytes  4.04 Mbits/sec    0   52.3 KBytes       
+[  4]   9.00-10.00  sec   218 KBytes  1.78 Mbits/sec    1   38.2 KBytes       
+[  4]  10.00-11.00  sec   127 KBytes  1.04 Mbits/sec    0   46.7 KBytes       
+[  4]  11.00-12.00  sec   245 KBytes  2.00 Mbits/sec    0   52.3 KBytes       
+[  4]  12.00-13.00  sec   311 KBytes  2.55 Mbits/sec    1   35.4 KBytes       
+[  4]  13.00-14.00  sec   191 KBytes  1.56 Mbits/sec    3   29.7 KBytes       
+[  4]  14.00-15.00  sec   339 KBytes  2.78 Mbits/sec    0   35.4 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  3.75 MBytes  2.10 Mbits/sec    7             sender
+[  4]   0.00-15.00  sec  3.60 MBytes  2.02 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34370 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   228 KBytes  1.86 Mbits/sec    3   25.5 KBytes       
+[  4]   1.00-2.00   sec   195 KBytes  1.60 Mbits/sec    0   24.0 KBytes       
+[  4]   2.00-3.00   sec   192 KBytes  1.58 Mbits/sec    0   29.7 KBytes       
+[  4]   3.00-4.00   sec   479 KBytes  3.93 Mbits/sec    0   39.6 KBytes       
+[  4]   4.00-5.00   sec   506 KBytes  4.15 Mbits/sec    0   48.1 KBytes       
+[  4]   5.00-6.00   sec   675 KBytes  5.52 Mbits/sec    0   56.6 KBytes       
+[  4]   6.00-7.00   sec   607 KBytes  4.97 Mbits/sec    0   63.6 KBytes       
+[  4]   7.00-8.00   sec   527 KBytes  4.32 Mbits/sec    0   79.2 KBytes       
+[  4]   8.00-9.00   sec   827 KBytes  6.78 Mbits/sec    0    126 KBytes       
+[  4]   9.00-10.00  sec   509 KBytes  4.17 Mbits/sec    0    170 KBytes       
+[  4]  10.00-11.00  sec   827 KBytes  6.78 Mbits/sec    0    247 KBytes       
+[  4]  11.00-12.00  sec  1018 KBytes  8.34 Mbits/sec    0    339 KBytes       
+[  4]  12.00-13.00  sec   445 KBytes  3.65 Mbits/sec    0    339 KBytes       
+[  4]  13.00-14.00  sec   318 KBytes  2.60 Mbits/sec    1    100 KBytes       
+[  4]  14.00-15.00  sec   636 KBytes  5.22 Mbits/sec    0    146 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  7.80 MBytes  4.36 Mbits/sec    4             sender
+[  4]   0.00-15.00  sec  6.83 MBytes  3.82 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=31.3 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=11.0 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=5.50 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=3.37 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.50 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.495/10.541/31.324/10.871 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=26.6 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=4.22 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=3.28 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.51 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=2.04 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 2.044/7.728/26.586/9.457 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.50 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=5.47 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=20.9 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.64 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=8.94 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.496/7.690/20.919/7.163 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=7.20 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.96 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.90 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.89 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=29.7 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8ms
+rtt min/avg/max/mdev = 1.886/8.927/29.696/10.544 ms
+
+
+ [log] são 2023-08-26-14h-37m-17s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_6
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)7
+AT 14:37:25: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 442207, coordinate_frame : 0, type_mask : 65016, lat_int : -158393113, lon_int : -479269055, alt : 1071.18994140625, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839311,lon=-47.926905,alt=1071.2
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_7
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-37m-26s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 46811 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  10.00-11.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  11.00-12.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  12.00-13.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  13.00-14.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  14.00-15.00  sec   128 KBytes  1.05 Mbits/sec  90  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.86 MBytes  1.04 Mbits/sec  7.570 ms  12/1339 (0.9%)  
+[  4] Sent 1339 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34376 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   247 KBytes  2.03 Mbits/sec    0   38.2 KBytes       
+[  4]   1.00-2.00   sec  91.9 KBytes   753 Kbits/sec    1   29.7 KBytes       
+[  4]   2.00-3.00   sec   291 KBytes  2.39 Mbits/sec    2   18.4 KBytes       
+[  4]   3.00-4.00   sec   452 KBytes  3.71 Mbits/sec    0   32.5 KBytes       
+[  4]   4.00-5.00   sec   242 KBytes  1.98 Mbits/sec    2   21.2 KBytes       
+[  4]   5.00-6.00   sec   127 KBytes  1.04 Mbits/sec    2   14.1 KBytes       
+[  4]   6.00-7.00   sec   137 KBytes  1.12 Mbits/sec    0   21.2 KBytes       
+[  4]   7.00-8.00   sec   298 KBytes  2.44 Mbits/sec    1   19.8 KBytes       
+[  4]   8.00-9.00   sec   206 KBytes  1.69 Mbits/sec    1   19.8 KBytes       
+[  4]   9.00-10.00  sec   236 KBytes  1.93 Mbits/sec    0   28.3 KBytes       
+[  4]  10.00-11.00  sec   174 KBytes  1.42 Mbits/sec    0   32.5 KBytes       
+[  4]  11.00-12.00  sec  65.0 KBytes   532 Kbits/sec    1   29.7 KBytes       
+[  4]  12.00-13.00  sec   141 KBytes  1.16 Mbits/sec    2   18.4 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    3   11.3 KBytes       
+[  4]  14.00-15.00  sec   260 KBytes  2.13 Mbits/sec    2   12.7 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  2.90 MBytes  1.62 Mbits/sec   17             sender
+[  4]   0.00-15.00  sec  2.76 MBytes  1.54 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34380 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   310 KBytes  2.54 Mbits/sec    1   26.9 KBytes       
+[  4]   1.00-2.00   sec   249 KBytes  2.04 Mbits/sec    1   24.0 KBytes       
+[  4]   2.00-3.00   sec  86.3 KBytes   707 Kbits/sec    0   26.9 KBytes       
+[  4]   3.00-4.00   sec   156 KBytes  1.27 Mbits/sec    1   22.6 KBytes       
+[  4]   4.00-5.00   sec   410 KBytes  3.36 Mbits/sec    0   31.1 KBytes       
+[  4]   5.00-6.00   sec   153 KBytes  1.25 Mbits/sec    1   26.9 KBytes       
+[  4]   6.00-7.00   sec   161 KBytes  1.32 Mbits/sec    0   33.9 KBytes       
+[  4]   7.00-8.00   sec  80.6 KBytes   660 Kbits/sec    2   19.8 KBytes       
+[  4]   8.00-9.00   sec   250 KBytes  2.05 Mbits/sec    0   31.1 KBytes       
+[  4]   9.00-10.00  sec   164 KBytes  1.34 Mbits/sec    1   25.5 KBytes       
+[  4]  10.00-11.00  sec  76.4 KBytes   625 Kbits/sec    1   17.0 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    2   18.4 KBytes       
+[  4]  12.00-13.00  sec  69.3 KBytes   568 Kbits/sec    0   25.5 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    3   8.48 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    4   15.6 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  2.11 MBytes  1.18 Mbits/sec   17             sender
+[  4]   0.00-15.00  sec  2.02 MBytes  1.13 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=9.99 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.24 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=15.7 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.13 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.05 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.054/5.831/15.734/6.021 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=29.0 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.19 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=17.7 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.97 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.88 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.877/10.544/29.009/11.047 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=26.2 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=60.0 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=30.6 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.30 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=22.4 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.303/28.095/60.020/18.866 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=106 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=7.66 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=5.06 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.44 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=20.0 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 4.442/28.636/105.974/39.079 ms
+
+
+ [log] são 2023-08-26-14h-38m-32s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_7
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)8
+AT 14:38:40: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 522208, coordinate_frame : 0, type_mask : 65016, lat_int : -158392250, lon_int : -479266918, alt : 1071.2899169921875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839225,lon=-47.926692,alt=1071.3
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_8
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-38m-40s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 48741 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   111 KBytes   911 Kbits/sec  78  
+[  4]   1.00-2.00   sec  47.1 KBytes   385 Kbits/sec  33  
+[  4]   2.00-3.00   sec  21.4 KBytes   175 Kbits/sec  15  
+[  4]   3.00-4.00   sec  31.4 KBytes   257 Kbits/sec  22  
+[  4]   4.00-5.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   5.00-6.00   sec  37.1 KBytes   304 Kbits/sec  26  
+[  4]   6.00-7.00   sec  24.2 KBytes   199 Kbits/sec  17  
+[  4]   7.00-8.00   sec  55.6 KBytes   455 Kbits/sec  39  
+[  4]   8.00-9.00   sec  52.8 KBytes   432 Kbits/sec  37  
+[  4]   9.00-10.00  sec  39.9 KBytes   327 Kbits/sec  28  
+[  4]  10.00-11.00  sec  25.7 KBytes   210 Kbits/sec  18  
+[  4]  11.00-12.00  sec  49.9 KBytes   409 Kbits/sec  35  
+[  4]  12.00-13.00  sec   117 KBytes   958 Kbits/sec  82  
+[  4]  13.00-14.00  sec  24.2 KBytes   199 Kbits/sec  17  
+[  4]  14.00-15.00  sec  55.6 KBytes   456 Kbits/sec  39  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec   707 KBytes   386 Kbits/sec  26.849 ms  62/496 (12%)  
+[  4] Sent 496 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34386 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   171 KBytes  1.40 Mbits/sec    2   9.90 KBytes       
+[  4]   1.00-2.00   sec  46.7 KBytes   382 Kbits/sec    3   5.66 KBytes       
+[  4]   2.00-3.00   sec  21.2 KBytes   174 Kbits/sec    2   4.24 KBytes       
+[  4]   3.00-4.00   sec  59.4 KBytes   487 Kbits/sec    2   8.48 KBytes       
+[  4]   4.00-5.00   sec  21.2 KBytes   174 Kbits/sec    3   4.24 KBytes       
+[  4]   5.00-6.00   sec  49.5 KBytes   406 Kbits/sec    4   4.24 KBytes       
+[  4]   6.00-7.00   sec  97.6 KBytes   799 Kbits/sec    1   8.48 KBytes       
+[  4]   7.00-8.00   sec  65.0 KBytes   533 Kbits/sec    1   9.90 KBytes       
+[  4]   8.00-9.00   sec  91.9 KBytes   753 Kbits/sec    1   11.3 KBytes       
+[  4]   9.00-10.00  sec  60.8 KBytes   498 Kbits/sec    2   7.07 KBytes       
+[  4]  10.00-11.00  sec  42.4 KBytes   347 Kbits/sec    5   5.66 KBytes       
+[  4]  11.00-12.00  sec  53.7 KBytes   441 Kbits/sec    2   4.24 KBytes       
+[  4]  12.00-13.00  sec  80.6 KBytes   660 Kbits/sec    1   11.3 KBytes       
+[  4]  13.00-14.00  sec   116 KBytes   950 Kbits/sec    0   17.0 KBytes       
+[  4]  14.00-15.00  sec  63.6 KBytes   522 Kbits/sec    1   15.6 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  1.02 MBytes   568 Kbits/sec   30             sender
+[  4]   0.00-15.00  sec   966 KBytes   527 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34390 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   156 KBytes  1.27 Mbits/sec    0   25.5 KBytes       
+[  4]   1.00-2.00   sec  55.1 KBytes   452 Kbits/sec    1   28.3 KBytes       
+[  4]   2.00-3.00   sec  83.4 KBytes   684 Kbits/sec    0   33.9 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    3   14.1 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    3   9.90 KBytes       
+[  4]   5.00-6.00   sec  80.6 KBytes   661 Kbits/sec    2   7.07 KBytes       
+[  4]   6.00-7.00   sec  63.6 KBytes   521 Kbits/sec    3   4.24 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    4   5.66 KBytes       
+[  4]   8.00-9.00   sec  72.1 KBytes   591 Kbits/sec    0   11.3 KBytes       
+[  4]   9.00-10.00  sec  69.3 KBytes   568 Kbits/sec    3   5.66 KBytes       
+[  4]  10.00-11.00  sec  63.6 KBytes   521 Kbits/sec    4   2.83 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    2   2.83 KBytes       
+[  4]  12.00-13.00  sec  63.6 KBytes   521 Kbits/sec    2   2.83 KBytes       
+[  4]  13.00-14.00  sec  74.9 KBytes   614 Kbits/sec    0   14.1 KBytes       
+[  4]  14.00-15.00  sec   167 KBytes  1.37 Mbits/sec    0   19.8 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec   949 KBytes   518 Kbits/sec   27             sender
+[  4]   0.00-15.00  sec   830 KBytes   453 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=7.51 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.85 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=32.7 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.34 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=11.1 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 1.846/11.500/32.689/11.041 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=4.05 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.85 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1.68 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=12.5 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=25.1 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 1.676/9.437/25.130/8.673 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=15.6 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=4.84 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=4.68 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.45 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=87.6 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 1.453/22.826/87.593/32.732 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=3.06 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=17.0 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=5.34 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=5.92 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=2.12 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 2.120/6.679/16.968/5.332 ms
+
+
+ [log] são 2023-08-26-14h-39m-49s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_8
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)9
+AT 14:39:57: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 781708, coordinate_frame : 0, type_mask : 65016, lat_int : -158390613, lon_int : -479262583, alt : 1071.1600341796875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839061,lon=-47.926258,alt=1071.2
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_9
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-39m-57s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 42305 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec  65.6 KBytes   537 Kbits/sec  46  
+[  4]   4.00-5.00   sec  31.4 KBytes   257 Kbits/sec  22  
+[  4]   5.00-6.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   6.00-7.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   7.00-8.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   8.00-9.00   sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]   9.00-10.00  sec  14.3 KBytes   117 Kbits/sec  10  
+[  4]  10.00-11.00  sec   115 KBytes   946 Kbits/sec  81  
+[  4]  11.00-12.00  sec   251 KBytes  2.06 Mbits/sec  176  
+[  4]  12.00-13.00  sec   133 KBytes  1.09 Mbits/sec  93  
+[  4]  13.00-14.00  sec   308 KBytes  2.52 Mbits/sec  216  
+[  4]  14.00-15.00  sec   271 KBytes  2.22 Mbits/sec  190  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.58 MBytes   885 Kbits/sec  17.316 ms  66/1136 (5.8%)  
+[  4] Sent 1136 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34396 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  99.0 KBytes   810 Kbits/sec    3   26.9 KBytes       
+[  4]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]   2.00-3.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]   5.00-6.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
+[  4]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+[  4]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  99.0 KBytes  54.1 Kbits/sec    6             sender
+[  4]   0.00-15.00  sec  17.0 KBytes  9.27 Kbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+iperf3: error - unable to receive control message: Connection reset by peer
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=220 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.51 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=50.5 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.70 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=312 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 2.511/117.881/311.983/125.461 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=26.1 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.24 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=10.2 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.76 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=5.08 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.761/9.277/26.102/8.882 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=6.71 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=6.14 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.90 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.66 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=6.77 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.662/4.837/6.768/2.134 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.06 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.49 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=6.96 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.83 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=31.8 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 2.488/9.832/31.827/11.116 ms
+
+
+ [log] são 2023-08-26-14h-40m-49s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_9
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)10
+AT 14:40:57: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 782208, coordinate_frame : 0, type_mask : 65016, lat_int : -158390613, lon_int : -479262583, alt : 1071.1600341796875, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839061,lon=-47.926258,alt=1071.2
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_10
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-14h-40m-57s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 52837 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  10.00-11.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  11.00-12.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  12.00-13.00  sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]  13.00-14.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  14.00-15.00  sec   128 KBytes  1.05 Mbits/sec  90  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.86 MBytes  1.04 Mbits/sec  5.938 ms  1/1339 (0.075%)  
+[  4] Sent 1339 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34404 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  50.9 KBytes   417 Kbits/sec    3   11.3 KBytes       
+[  4]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec    0   11.3 KBytes       
+[  4]   2.00-3.00   sec  28.3 KBytes   232 Kbits/sec    8   11.3 KBytes       
+[  4]   3.00-4.00   sec  32.5 KBytes   266 Kbits/sec    1   2.83 KBytes       
+[  4]   4.00-5.00   sec  18.4 KBytes   151 Kbits/sec    0   2.83 KBytes       
+[  4]   5.00-6.00   sec   106 KBytes   870 Kbits/sec    1   11.3 KBytes       
+[  4]   6.00-7.00   sec   221 KBytes  1.81 Mbits/sec    0   22.6 KBytes       
+[  4]   7.00-8.00   sec   235 KBytes  1.92 Mbits/sec    0   33.9 KBytes       
+[  4]   8.00-9.00   sec  94.7 KBytes   776 Kbits/sec    4   26.9 KBytes       
+[  4]   9.00-10.00  sec   262 KBytes  2.14 Mbits/sec    0   32.5 KBytes       
+[  4]  10.00-11.00  sec   113 KBytes   927 Kbits/sec    0   33.9 KBytes       
+[  4]  11.00-12.00  sec   189 KBytes  1.55 Mbits/sec    1   29.7 KBytes       
+[  4]  12.00-13.00  sec   168 KBytes  1.38 Mbits/sec    0   33.9 KBytes       
+[  4]  13.00-14.00  sec   329 KBytes  2.70 Mbits/sec    0   36.8 KBytes       
+[  4]  14.00-15.00  sec   414 KBytes  3.39 Mbits/sec    0   43.8 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  2.21 MBytes  1.24 Mbits/sec   18             sender
+[  4]   0.00-15.00  sec  2.10 MBytes  1.18 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 34408 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   434 KBytes  3.56 Mbits/sec    0   46.7 KBytes       
+[  4]   1.00-2.00   sec   236 KBytes  1.93 Mbits/sec    1   39.6 KBytes       
+[  4]   2.00-3.00   sec   141 KBytes  1.16 Mbits/sec    0   48.1 KBytes       
+[  4]   3.00-4.00   sec   327 KBytes  2.68 Mbits/sec    0   49.5 KBytes       
+[  4]   4.00-5.00   sec   153 KBytes  1.25 Mbits/sec    0   49.5 KBytes       
+[  4]   5.00-6.00   sec   352 KBytes  2.88 Mbits/sec    0   50.9 KBytes       
+[  4]   6.00-7.00   sec   242 KBytes  1.98 Mbits/sec    0   56.6 KBytes       
+[  4]   7.00-8.00   sec   208 KBytes  1.70 Mbits/sec    0   67.9 KBytes       
+[  4]   8.00-9.00   sec   255 KBytes  2.08 Mbits/sec    0   87.7 KBytes       
+[  4]   9.00-10.00  sec  63.6 KBytes   521 Kbits/sec    3   12.7 KBytes       
+[  4]  10.00-11.00  sec  63.6 KBytes   521 Kbits/sec    0   46.7 KBytes       
+[  4]  11.00-12.00  sec   191 KBytes  1.56 Mbits/sec    0   53.7 KBytes       
+[  4]  12.00-13.00  sec   127 KBytes  1.04 Mbits/sec    0   53.7 KBytes       
+[  4]  13.00-14.00  sec   127 KBytes  1.04 Mbits/sec    6   28.3 KBytes       
+[  4]  14.00-15.00  sec  63.6 KBytes   521 Kbits/sec    4   29.7 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-15.00  sec  2.91 MBytes  1.63 Mbits/sec   14             sender
+[  4]   0.00-15.00  sec  2.67 MBytes  1.49 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=55.5 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.33 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=6.53 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=3.87 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.26 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8ms
+rtt min/avg/max/mdev = 1.260/13.699/55.506/20.993 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=3.18 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.25 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1.54 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.35 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=22.0 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.253/5.866/22.018/8.106 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.75 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=4.67 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.00 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=12.3 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=4.11 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 2.003/5.765/12.290/3.484 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=2.31 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=18.9 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=12.7 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=2.28 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 67ms
+rtt min/avg/max/mdev = 2.280/9.044/18.921/7.101 ms
+
+
+ [log] são 2023-08-26-14h-42m-05s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_10
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Solicitando RTL ...
+AT 14:42:13: Drained 201 messages from mav (2557.471406/s)
+AT 14:42:13: Changing mode to RTL
+AT 14:42:13: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=6.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 14:42:13: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000002s)
+AT 14:42:13: Got mode=6 want=6
+AT 14:42:13: Waiting RTL to reach Home and disarm
+AT 14:42:14: Alt: 18.06  HomeDist: 250.61 
+AT 14:42:14: Alt: 18.04  HomeDist: 250.44 
+AT 14:42:15: Alt: 18.29  HomeDist: 250.40 
+AT 14:42:16: Alt: 18.78  HomeDist: 250.35 
+AT 14:42:16: Alt: 19.41  HomeDist: 250.33 
+AT 14:42:17: Alt: 19.89  HomeDist: 250.10 
+AT 14:42:18: Alt: 20.09  HomeDist: 249.53 
+AT 14:42:18: Alt: 20.02  HomeDist: 248.31 
+AT 14:42:19: Alt: 19.98  HomeDist: 246.15 
+AT 14:42:20: Alt: 20.01  HomeDist: 242.94 
+AT 14:42:20: Alt: 20.06  HomeDist: 238.73 
+AT 14:42:21: Alt: 20.08  HomeDist: 233.54 
+AT 14:42:22: Alt: 20.14  HomeDist: 227.65 
+AT 14:42:22: Alt: 20.18  HomeDist: 221.32 
+AT 14:42:23: Alt: 20.16  HomeDist: 214.75 
+AT 14:42:24: Alt: 20.09  HomeDist: 208.02 
+AT 14:42:24: Alt: 20.02  HomeDist: 201.28 
+AT 14:42:25: Alt: 19.97  HomeDist: 194.62 
+AT 14:42:26: Alt: 19.93  HomeDist: 188.02 
+AT 14:42:26: Alt: 19.90  HomeDist: 181.39 
+AT 14:42:27: Alt: 19.86  HomeDist: 174.77 
+AT 14:42:28: Alt: 19.83  HomeDist: 168.11 
+AT 14:42:28: Alt: 19.85  HomeDist: 161.46 
+AT 14:42:29: Alt: 19.86  HomeDist: 154.79 
+AT 14:42:30: Alt: 19.88  HomeDist: 148.07 
+AT 14:42:30: Alt: 19.85  HomeDist: 141.41 
+AT 14:42:31: Alt: 19.84  HomeDist: 134.71 
+AT 14:42:32: Alt: 19.82  HomeDist: 128.15 
+AT 14:42:32: Alt: 19.89  HomeDist: 121.62 
+AT 14:42:33: Alt: 19.97  HomeDist: 115.00 
+AT 14:42:34: Alt: 20.00  HomeDist: 108.40 
+AT 14:42:34: Alt: 20.05  HomeDist: 101.80 
+AT 14:42:35: Alt: 20.05  HomeDist: 95.12 
+AT 14:42:36: Alt: 20.05  HomeDist: 88.41 
+AT 14:42:36: Alt: 20.06  HomeDist: 81.68 
+AT 14:42:37: Alt: 20.06  HomeDist: 74.98 
+AT 14:42:38: Alt: 20.06  HomeDist: 68.29 
+AT 14:42:38: Alt: 20.02  HomeDist: 61.61 
+AT 14:42:39: Alt: 20.01  HomeDist: 55.02 
+AT 14:42:40: Alt: 20.07  HomeDist: 48.39 
+AT 14:42:40: Alt: 20.13  HomeDist: 41.65 
+AT 14:42:41: Alt: 20.09  HomeDist: 34.86 
+AT 14:42:42: Alt: 20.03  HomeDist: 28.20 
+AT 14:42:42: Alt: 19.98  HomeDist: 21.70 
+AT 14:42:43: Alt: 20.02  HomeDist: 15.72 
+AT 14:42:44: Alt: 20.03  HomeDist: 10.46 
+AT 14:42:44: Alt: 19.95  HomeDist: 6.20 
+AT 14:42:45: Alt: 19.82  HomeDist: 3.08 
+AT 14:42:46: Alt: 19.82  HomeDist: 1.08 
+AT 14:42:46: Alt: 19.84  HomeDist: 0.15 
+AT 14:42:47: Alt: 19.95  HomeDist: 0.46 
+AT 14:42:48: Alt: 20.09  HomeDist: 0.55 
+AT 14:42:48: Alt: 20.21  HomeDist: 0.49 
+AT 14:42:49: Alt: 20.25  HomeDist: 0.31 
+AT 14:42:50: Alt: 20.23  HomeDist: 0.12 
+AT 14:42:50: Alt: 20.18  HomeDist: 0.05 
+AT 14:42:51: Alt: 20.14  HomeDist: 0.03 
+AT 14:42:52: Alt: 20.14  HomeDist: 0.03 
+AT 14:42:52: Alt: 20.13  HomeDist: 0.03 
+AT 14:42:53: Alt: 20.12  HomeDist: 0.04 
+AT 14:42:54: Alt: 20.02  HomeDist: 0.07 
+AT 14:42:54: Alt: 19.50  HomeDist: 0.12 
+AT 14:42:55: Alt: 18.53  HomeDist: 0.11 
+AT 14:42:56: Alt: 17.49  HomeDist: 0.17 
+AT 14:42:56: Alt: 16.52  HomeDist: 0.16 
+AT 14:42:57: Alt: 15.58  HomeDist: 0.11 
+AT 14:42:58: Alt: 14.57  HomeDist: 0.10 
+AT 14:42:58: Alt: 13.59  HomeDist: 0.10 
+AT 14:42:59: Alt: 12.61  HomeDist: 0.10 
+AT 14:43:00: Alt: 11.58  HomeDist: 0.07 
+AT 14:43:00: Alt: 10.69  HomeDist: 0.01 
+AT 14:43:01: Alt: 10.26  HomeDist: 0.16 
+AT 14:43:02: Alt: 9.99  HomeDist: 0.21 
+AT 14:43:02: Alt: 9.59  HomeDist: 0.14 
+AT 14:43:03: Alt: 9.22  HomeDist: 0.12 
+AT 14:43:04: Alt: 8.91  HomeDist: 0.09 
+AT 14:43:04: Alt: 8.72  HomeDist: 0.15 
+AT 14:43:05: Alt: 8.41  HomeDist: 0.11 
+AT 14:43:06: Alt: 7.98  HomeDist: 0.07 
+AT 14:43:06: Alt: 7.60  HomeDist: 0.24 
+AT 14:43:07: Alt: 7.29  HomeDist: 0.49 
+AT 14:43:08: Alt: 6.95  HomeDist: 0.53 
+AT 14:43:08: Alt: 6.61  HomeDist: 0.57 
+AT 14:43:09: Alt: 6.21  HomeDist: 0.68 
+AT 14:43:10: Alt: 5.83  HomeDist: 0.83 
+AT 14:43:10: Alt: 5.46  HomeDist: 0.94 
+AT 14:43:11: Alt: 5.19  HomeDist: 1.01 
+AT 14:43:12: Alt: 4.83  HomeDist: 1.03 
+AT 14:43:12: Alt: 4.48  HomeDist: 0.99 
+AT 14:43:13: Alt: 4.15  HomeDist: 1.03 
+AT 14:43:14: Alt: 3.82  HomeDist: 1.11 
+AT 14:43:14: Alt: 3.45  HomeDist: 1.18 
+AT 14:43:15: Alt: 3.11  HomeDist: 1.22 
+AT 14:43:16: Alt: 2.78  HomeDist: 1.36 
+AT 14:43:16: Alt: 2.49  HomeDist: 1.40 
+AT 14:43:17: Alt: 2.37  HomeDist: 1.39 
+AT 14:43:18: Alt: 2.41  HomeDist: 1.38 
+AT 14:43:18: Alt: 2.47  HomeDist: 1.37 
+Traceback (most recent call last):
+  File "mesurer.py", line 1643, in <module>
+    copter.do_RTL()
+  File "mesurer.py", line 1395, in do_RTL
+    self.wait_rtl_complete(check_alt=check_alt, distance_max=distance_max, timeout=timeout)
+  File "mesurer.py", line 1420, in wait_rtl_complete
+    raise Exception("Did not get home")
+Exception: Did not get home
