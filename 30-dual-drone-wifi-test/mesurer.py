@@ -1525,10 +1525,30 @@ if __name__ == "__main__":
 
     conf_experiment_sleeps = 5
     conf_experiment_high = 20
-    conf_experiment_distance_between_tests = 50
-    conf_experiment_tests = 5
-    conf_experiment_heading = 20
+    conf_experiment_distance_between_tests = 25
+    conf_experiment_tests = 8
+    conf_experiment_heading = 25
     conf_experiment_speed = 5
+
+    print("--------------------------------------------------------------")
+    print("--------------------------------------------------------------")
+    print("Iniciando script MESURER.PY")
+    print("")
+    print("parametros do python de teste:")
+    print("")
+    print("conf_experiment_sleeps" + str(conf_experiment_sleeps))
+    print("conf_experiment_high" + str(conf_experiment_high))
+    print("conf_experiment_distance_between_tests" + str(conf_experiment_distance_between_tests))
+    print("conf_experiment_tests" + str(conf_experimentconf_experiment_tests_sleeps))
+    print("conf_experiment_heading" + str(conf_experiment_heading))
+    print("conf_experiment_speed" + str(conf_experiment_speed))
+    print("")
+    print("")
+
+
+
+
+
 
 
     print("Running Mesurer MAIN!!!")
@@ -1591,7 +1611,7 @@ if __name__ == "__main__":
     time.sleep(conf_experiment_sleeps)
  
     for num in range(1, conf_experiment_tests +1):
-            print('Roda experimento: ' + str(num))
+            print('Roda experimento: (loop FOR iterator)' + str(num))
             print('get_current_target: ' + str(copter.get_current_target()))
 
             os.system('./net_test.sh ' + 'Loop_' + str(num))
