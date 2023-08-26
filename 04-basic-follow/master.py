@@ -1590,3 +1590,4 @@ def flask_position_relative_json():
 print("Running MAIN!!!")
 copter = Copter(sysid=int(config['master']['sysid']))
 copter.connect(connection_string=str(config['master']['connection_string']))
+app.run(host='0.0.0.0' , port=5000)

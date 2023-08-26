@@ -1525,9 +1525,9 @@ if __name__ == "__main__":
 
     conf_experiment_sleeps = 5
     conf_experiment_high = 20
-    conf_experiment_distance_between_tests = 10
+    conf_experiment_distance_between_tests = 50
     conf_experiment_tests = 5
-    conf_experiment_heading = 0
+    conf_experiment_heading = 20
     conf_experiment_speed = 5
 
 

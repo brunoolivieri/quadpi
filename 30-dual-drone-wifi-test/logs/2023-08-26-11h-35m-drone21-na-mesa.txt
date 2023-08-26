@@ -1,0 +1,726 @@
+----------------------------------------------------------
+RUNNING TEST WITH CODE 
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-11h-38m-17s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+iperf3: unrecognized option '--repeating-payload'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+Testing bitrate TCP: 
+
+iperf3: unrecognized option '--repeating-payload'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=8.01 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.22 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 1.224/4.617/8.011/3.394 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.19 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=5.61 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 5.190/5.398/5.606/0.208 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=3.03 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.88 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 2.875/2.954/3.033/0.079 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=2.48 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=8.16 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 2.476/5.318/8.161/2.843 ms
+
+
+ [log] são 2023-08-26-11h-38m-22s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE 
+**********************************************************
+
+
+
+----------------------------------------------------------
+RUNNING TEST WITH CODE 
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-11h-38m-59s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+iperf3: unrecognized option '--repeating-payload'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+Testing bitrate TCP: 
+
+iperf3: unrecognized option '--repeating-payload'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=200 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=5.59 ms
+
+--- 192.168.1.1 ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 15ms
+rtt min/avg/max/mdev = 5.590/102.815/200.041/97.226 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=3.80 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=15.2 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 3.801/9.504/15.207/5.703 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=8.70 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=9.35 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 8.695/9.024/9.354/0.342 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=73.5 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=21.5 ms
+
+--- 192.168.1.1 ping statistics ---
+4 packets transmitted, 2 received, 50% packet loss, time 52ms
+rtt min/avg/max/mdev = 21.531/47.524/73.517/25.993 ms
+
+
+ [log] são 2023-08-26-11h-39m-06s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE 
+**********************************************************
+
+
+
+----------------------------------------------------------
+RUNNING TEST WITH CODE 
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-11h-41m-46s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+iperf3: unrecognized option '--connect-timeout'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+Testing bitrate TCP: 
+
+iperf3: unrecognized option '--connect-timeout'
+Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      <host>    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    <host>    run in client mode, connecting to <host>
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         <port>    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion <algo>   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+                            (Linux only)
+
+[KMG] indicates options that support a K/M/G suffix for kilo-, mega-, or giga-
+
+iperf3 homepage at: http://software.es.net/iperf/
+Report bugs to:     https://github.com/esnet/iperf
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=23.5 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=7.24 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 7.241/15.356/23.471/8.115 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=18.5 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=26.1 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 18.475/22.292/26.110/3.820 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.15 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.24 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 1.151/2.193/3.236/1.043 ms
+
+Testing PING 1000 bytes: 
+----------------------------------------------------------
+RUNNING TEST WITH CODE 
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-11h-45m-13s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 44448 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-5.00   sec   629 KBytes  1.03 Mbits/sec  0.602 ms  1/440 (0.23%)  
+[  4] Sent 440 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 36550 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  1.77 MBytes  14.9 Mbits/sec    0    102 KBytes       
+[  4]   1.00-2.00   sec  1.62 MBytes  13.6 Mbits/sec    0    174 KBytes       
+[  4]   2.00-3.00   sec  1.49 MBytes  12.5 Mbits/sec    1    147 KBytes       
+[  4]   3.00-4.00   sec  1.49 MBytes  12.5 Mbits/sec    0    170 KBytes       
+[  4]   4.00-5.00   sec  1.18 MBytes  9.91 Mbits/sec    0    187 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-5.00   sec  7.55 MBytes  12.7 Mbits/sec    1             sender
+[  4]   0.00-5.00   sec  7.11 MBytes  11.9 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=138 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=8.46 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1ms
+rtt min/avg/max/mdev = 8.459/73.222/137.986/64.764 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=106 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=5.18 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1ms
+rtt min/avg/max/mdev = 5.177/55.489/105.802/50.313 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=5.45 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.64 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 3ms
+rtt min/avg/max/mdev = 1.641/3.545/5.450/1.905 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=3.18 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.95 ms
+
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 1.945/2.562/3.179/0.617 ms
+
+
+ [log] são 2023-08-26-11h-45m-27s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE 
+**********************************************************
+
+
+
+----------------------------------------------------------
+RUNNING TEST WITH CODE 
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-11h-47m-30s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 59871 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-10.00  sec  1.24 MBytes  1.04 Mbits/sec  0.742 ms  0/889 (0%)  
+[  4] Sent 889 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 36556 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  1.78 MBytes  15.0 Mbits/sec    0    102 KBytes       
+[  4]   1.00-2.00   sec  1.86 MBytes  15.6 Mbits/sec    0    165 KBytes       
+[  4]   2.00-3.00   sec  1.80 MBytes  15.1 Mbits/sec    0    209 KBytes       
+[  4]   3.00-4.00   sec  1.86 MBytes  15.6 Mbits/sec    0    291 KBytes       
+[  4]   4.00-5.00   sec  2.17 MBytes  18.2 Mbits/sec    0    375 KBytes       
+[  4]   5.00-6.00   sec  1.74 MBytes  14.6 Mbits/sec    0    379 KBytes       
+[  4]   6.00-7.00   sec  1.62 MBytes  13.5 Mbits/sec    0    411 KBytes       
+[  4]   7.00-8.00   sec  2.30 MBytes  19.3 Mbits/sec    0    502 KBytes       
+[  4]   8.00-9.00   sec  1.93 MBytes  16.2 Mbits/sec    0    502 KBytes       
+[  4]   9.00-10.00  sec  1.93 MBytes  16.2 Mbits/sec    0    554 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-10.00  sec  19.0 MBytes  15.9 Mbits/sec    0             sender
+[  4]   0.00-10.00  sec  17.8 MBytes  14.9 Mbits/sec                  receiver
+
+iperf Done.
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=10.9 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.39 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.34 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.95 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.33 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 9ms
+rtt min/avg/max/mdev = 1.325/3.582/10.901/3.678 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=14.2 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.58 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1.16 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.35 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.18 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.164/4.294/14.199/4.986 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=7.49 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=4.43 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1.16 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.62 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=1.70 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.160/3.276/7.486/2.399 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.76 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=1.83 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=1.87 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=2.84 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=3.03 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.763/2.266/3.034/0.554 ms
+
+
+ [log] são 2023-08-26-11h-48m-06s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE 
+**********************************************************
+
+
+

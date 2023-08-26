@@ -1,9 +1,9 @@
 #!/bin/bash
 
-IP_TARGET='127.0.0.1'
+IP_TARGET='192.168.1.1'
 TIMEOUT=5
-PING_RETRIES=2
-IPERF_PERIOD=5
+PING_RETRIES=5
+IPERF_PERIOD=10
 
 echo "----------------------------------------------------------"
 echo "RUNNING TEST WITH CODE $1"
@@ -13,11 +13,11 @@ DATE=$(date +"%Y-%m-%d-%Hh-%Mm-%Ss")
 echo -e "\n\n [log] são $DATE \n\n"
 
 echo -e "\nTesting bitrate UDP with flow control: \n"
-iperf3 -c $IP_TARGET -t $IPERF_PERIOD --repeating-payload --connect-timeout $TIMEOUT -u -l 1460
+iperf3 -c $IP_TARGET -t $IPERF_PERIOD -u -l 1460
 echo -e "\n\n"
 
 echo -e "Testing bitrate TCP: \n"
-iperf3 -c $IP_TARGET -t $IPERF_PERIOD --repeating-payload --connect-timeout $TIMEOUT 
+iperf3 -c $IP_TARGET -t $IPERF_PERIOD
 echo -e "\n\n"
 
 echo -e "\nTesting PING 50 bytes: "
