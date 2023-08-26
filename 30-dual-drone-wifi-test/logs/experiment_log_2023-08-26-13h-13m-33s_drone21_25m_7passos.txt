@@ -1,0 +1,13 @@
+--------------------------------------------------------------
+--------------------------------------------------------------
+Iniciando script MESURER.PY
+ 
+parametros do python de teste:
+ 
+conf_experiment_sleeps5
+conf_experiment_high20
+conf_experiment_distance_between_tests25
+Traceback (most recent call last):
+  File "mesurer.py", line 1542, in <module>
+    print("conf_experiment_tests" + str(conf_experiment_tests_sleeps))
+NameError: name 'conf_experiment_tests_sleeps' is not defined

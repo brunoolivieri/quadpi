@@ -1,0 +1,187 @@
+--------------------------------------------------------------
+--------------------------------------------------------------
+Iniciando script MESURER.PY
+ 
+parametros do python de teste:
+ 
+ 
+ 
+Running Mesurer MAIN!!!
+Connecting to the vehicle...
+Asking GUIDED mode...
+AT 13:27:34: Drained 0 messages from mav (0.000000/s)
+AT 13:27:34: Changing mode to GUIDED
+AT 13:27:34: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:27:34: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000002s)
+AT 13:27:34: Got mode=4 want=4
+Waiting be ready to arm...
+AT 13:27:34: Waiting for ready to arm
+AT 13:27:34: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 13:27:34: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1193, param_index : 65535}
+AT 13:27:34: Waiting for EKF value 831
+AT 13:27:34: Wait EKF.flags: required:831 current:831 errors=0
+AT 13:27:34: EKF Flags OK
+AT 13:27:34: Waiting for GPS health
+AT 13:27:35: GPS healthy
+AT 13:27:35: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:27:35: Polled home position (HOME_POSITION {latitude : -158393906, longitude : -479271242, altitude : 1058130, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 1128972800})
+AT 13:27:35: Took 0 seconds to become armable
+Ready to arm!!!
+Trying to arm...
+AT 13:27:35: Arm motors with MAVLink cmd
+AT 13:27:35: Sending COMMAND_LONG to (21,1) (MAV_CMD_COMPONENT_ARM_DISARM) (p1=1.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:27:35: ACK received: COMMAND_ACK {command : 400, result : 0} (0.000004s)
+AT 13:27:35: Drained 0 messages from mav (0.000000/s)
+AT 13:27:36: Motors ARMED
+Asking takeoff to 20 meters...
+AT 13:27:36: Sending COMMAND_LONG to (21,1) (MAV_CMD_NAV_TAKEOFF) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=20.000000)
+AT 13:27:36: ACK received: COMMAND_ACK {command : 22, result : 0} (0.000003s)
+AT 13:27:36: Ran command
+AT 13:27:36: Waiting for Altitude=19.00 with accuracy 6.00
+AT 13:27:36: Altitude=0.06 (want 19.000000 +- 6.000000)
+AT 13:27:37: Altitude=0.12 (want 19.000000 +- 6.000000)
+AT 13:27:39: Altitude=0.16 (want 19.000000 +- 6.000000)
+AT 13:27:40: Altitude=1.60 (want 19.000000 +- 6.000000)
+AT 13:27:41: AP: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+AT 13:27:41: AP: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+AT 13:27:41: Altitude=4.82 (want 19.000000 +- 6.000000)
+AT 13:27:43: Altitude=8.06 (want 19.000000 +- 6.000000)
+AT 13:27:44: Altitude=11.34 (want 19.000000 +- 6.000000)
+AT 13:27:45: Altitude=14.63 (want 19.000000 +- 6.000000)
+AT 13:27:47: Altitude=17.40 (want 19.000000 +- 6.000000)
+AT 13:27:48: Altitude=19.17 (want 19.000000 +- 6.000000)
+AT 13:27:48: Attained Altitude=19.174000
+Waiting to reach at least 15m...
+AT 13:27:48: Waiting for Altitude=15.00 with accuracy 10.00
+AT 13:27:48: Altitude=19.46 (want 15.000000 +- 10.000000)
+AT 13:27:48: Attained Altitude=19.461000
+Changing the Heading...
+Sleeping for experiment loop...
+Roda experimento: (loop FOR iterator)1
+AT 13:27:53: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1142960, coordinate_frame : 0, type_mask : 65016, lat_int : -158393931, lon_int : -479271508, alt : 1076.5, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839393,lon=-47.927151,alt=1076.5
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_1
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-13h-27m-53s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+Testing bitrate TCP: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+Testing bitrate TCP: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=54.2 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=9.71 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=4.67 ms
+58 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.12 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=5.50 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 4.123/15.642/54.219/19.388 ms
+
+Testing PING 100 bytes: 
+PING 192.168.1.1 (192.168.1.1) 100(128) bytes of data.
+108 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=294 ms
+108 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=158 ms
+108 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=6.09 ms
+108 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=1.58 ms
+108 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=57.7 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev = 1.584/103.434/293.583/110.541 ms
+
+Testing PING 500 bytes: 
+PING 192.168.1.1 (192.168.1.1) 200(228) bytes of data.
+208 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=32.8 ms
+208 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=73.9 ms
+208 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=39.9 ms
+208 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=47.7 ms
+208 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=10.9 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 11ms
+rtt min/avg/max/mdev = 10.897/41.047/73.855/20.489 ms
+
+Testing PING 1000 bytes: 
+PING 192.168.1.1 (192.168.1.1) 1000(1028) bytes of data.
+1008 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=101 ms
+1008 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=3.66 ms
+1008 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=2.84 ms
+1008 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=7.82 ms
+1008 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=7.71 ms
+
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 12ms
+rtt min/avg/max/mdev = 2.841/24.647/101.211/38.336 ms
+
+
+ [log] são 2023-08-26-13h-28m-14s 
+
+
+**********************************************************
+FINISHING TEST WITH CODE Loop_1
+**********************************************************
+
+
+
+Changing the location...
+Waiting navigation ...
+Roda experimento: (loop FOR iterator)2
+AT 13:28:22: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 1143460, coordinate_frame : 0, type_mask : 65016, lat_int : -158393931, lon_int : -479271508, alt : 1076.5, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839393,lon=-47.927151,alt=1076.5
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_2
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-13h-28m-22s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+Testing bitrate TCP: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+Testing bitrate TCP: 
+
+iperf3: error - unable to connect to server: Connection refused
+
+
+
+
+Testing PING 50 bytes: 
+PING 192.168.1.1 (192.168.1.1) 50(78) bytes of data.
+58 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=26.2 ms
+58 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=7.14 ms
+58 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=149 ms
+58 bytes from 192.168.1.1: icmp_seq=5 ttl=64 time=72.3 ms

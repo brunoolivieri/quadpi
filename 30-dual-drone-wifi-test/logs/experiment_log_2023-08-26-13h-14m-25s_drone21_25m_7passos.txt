@@ -1,0 +1,105 @@
+--------------------------------------------------------------
+--------------------------------------------------------------
+Iniciando script MESURER.PY
+ 
+parametros do python de teste:
+ 
+ 
+ 
+Running Mesurer MAIN!!!
+Connecting to the vehicle...
+Asking GUIDED mode...
+AT 13:14:26: Drained 0 messages from mav (0.000000/s)
+AT 13:14:26: Changing mode to GUIDED
+AT 13:14:26: Sending COMMAND_LONG to (21,1) (MAV_CMD_DO_SET_MODE) (p1=1.000000 p2=4.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:14:26: ACK received: COMMAND_ACK {command : 176, result : 0} (0.000002s)
+AT 13:14:26: Got mode=4 want=4
+Waiting be ready to arm...
+AT 13:14:26: Waiting for ready to arm
+AT 13:14:26: Sending param_request_read for (AHRS_EKF_TYPE)
+AT 13:14:26: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : STAT_RUNTIME, param_value : 84056.0, param_type : 6, param_count : 1193, param_index : 65535}
+AT 13:14:26: (STAT_RUNTIME) != (AHRS_EKF_TYPE)
+AT 13:14:26: get_parameter(AHRS_EKF_TYPE): PARAM_VALUE {param_id : AHRS_EKF_TYPE, param_value : 3.0, param_type : 2, param_count : 1193, param_index : 65535}
+AT 13:14:26: Waiting for EKF value 831
+AT 13:14:27: Wait EKF.flags: required:831 current:831 errors=0
+AT 13:14:27: EKF Flags OK
+AT 13:14:27: Waiting for GPS health
+AT 13:14:27: GPS healthy
+AT 13:14:27: Sending COMMAND_LONG to (21,1) (MAV_CMD_GET_HOME_POSITION) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:14:27: Polled home position (HOME_POSITION {latitude : -158393931, longitude : -479271508, altitude : 1056500, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 340974795})
+AT 13:14:27: Took 0 seconds to become armable
+Ready to arm!!!
+Trying to arm...
+AT 13:14:27: Arm motors with MAVLink cmd
+AT 13:14:27: Sending COMMAND_LONG to (21,1) (MAV_CMD_COMPONENT_ARM_DISARM) (p1=1.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=0.000000)
+AT 13:14:27: ACK received: COMMAND_ACK {command : 400, result : 0} (0.000006s)
+AT 13:14:27: Drained 0 messages from mav (0.000000/s)
+AT 13:14:28: Motors ARMED
+Asking takeoff to 20 meters...
+AT 13:14:28: Sending COMMAND_LONG to (21,1) (MAV_CMD_NAV_TAKEOFF) (p1=0.000000 p2=0.000000 p3=0.000000 p4=0.000000 p5=0.000000 p6=0.000000  p7=20.000000)
+AT 13:14:28: ACK received: COMMAND_ACK {command : 22, result : 0} (0.000003s)
+AT 13:14:28: Ran command
+AT 13:14:28: Waiting for Altitude=19.00 with accuracy 6.00
+AT 13:14:29: Altitude=-0.03 (want 19.000000 +- 6.000000)
+AT 13:14:30: Altitude=-0.10 (want 19.000000 +- 6.000000)
+AT 13:14:31: Altitude=0.16 (want 19.000000 +- 6.000000)
+AT 13:14:32: AP: EKF3 IMU0 MAG0 ground mag anomaly, yaw re-aligned
+AT 13:14:33: Altitude=2.80 (want 19.000000 +- 6.000000)
+AT 13:14:33: AP: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+AT 13:14:33: AP: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+AT 13:14:34: Altitude=6.28 (want 19.000000 +- 6.000000)
+AT 13:14:35: Altitude=9.43 (want 19.000000 +- 6.000000)
+AT 13:14:37: Altitude=12.52 (want 19.000000 +- 6.000000)
+AT 13:14:38: Altitude=15.49 (want 19.000000 +- 6.000000)
+AT 13:14:39: Altitude=17.60 (want 19.000000 +- 6.000000)
+AT 13:14:41: Altitude=19.00 (want 19.000000 +- 6.000000)
+AT 13:14:41: Attained Altitude=19.003000
+Waiting to reach at least 15m...
+AT 13:14:41: Waiting for Altitude=15.00 with accuracy 10.00
+AT 13:14:41: Altitude=19.24 (want 15.000000 +- 10.000000)
+AT 13:14:41: Attained Altitude=19.240000
+Changing the Heading...
+Sleeping for experiment loop...
+Roda experimento: (loop FOR iterator)1
+AT 13:14:46: Received local target: POSITION_TARGET_GLOBAL_INT {time_boot_ms : 355460, coordinate_frame : 0, type_mask : 65016, lat_int : -158393931, lon_int : -479271508, alt : 1076.5, vx : 0.0, vy : 0.0, vz : 0.0, afx : 0.0, afy : 0.0, afz : 0.0, yaw : 0.0, yaw_rate : 0.0}
+get_current_target: lat=-15.839393,lon=-47.927151,alt=1076.5
+----------------------------------------------------------
+RUNNING TEST WITH CODE Loop_1
+----------------------------------------------------------
+
+
+ [log] são 2023-08-26-13h-14m-46s 
+
+
+
+Testing bitrate UDP with flow control: 
+
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.21 port 50311 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   117 KBytes   958 Kbits/sec  82  
+[  4]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   3.00-4.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   4.00-5.00   sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   6.00-7.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  90  
+[  4]   9.00-10.00  sec   127 KBytes  1.04 Mbits/sec  89  
+[  4]  10.00-11.00  sec   114 KBytes   934 Kbits/sec  80  
+[  4]  11.00-12.00  sec  22.8 KBytes   187 Kbits/sec  16  
+[  4]  12.00-13.00  sec  38.5 KBytes   315 Kbits/sec  27  
+[  4]  13.00-14.00  sec  15.7 KBytes   128 Kbits/sec  11  
+[  4]  14.00-15.00  sec  28.5 KBytes   234 Kbits/sec  20  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-15.00  sec  1.45 MBytes   813 Kbits/sec  60.051 ms  59/1044 (5.7%)  
+[  4] Sent 1044 datagrams
+
+iperf Done.
+
+
+
+Testing bitrate TCP: 
+

@@ -1527,23 +1527,23 @@ if __name__ == "__main__":
     conf_experiment_high = 20
     conf_experiment_distance_between_tests = 25
     conf_experiment_tests = 8
-    conf_experiment_heading = 25
+    conf_experiment_heading = 20
     conf_experiment_speed = 5
 
     print("--------------------------------------------------------------")
     print("--------------------------------------------------------------")
     print("Iniciando script MESURER.PY")
-    print("")
+    print(" ")
     print("parametros do python de teste:")
-    print("")
-    print("conf_experiment_sleeps" + str(conf_experiment_sleeps))
-    print("conf_experiment_high" + str(conf_experiment_high))
-    print("conf_experiment_distance_between_tests" + str(conf_experiment_distance_between_tests))
-    print("conf_experiment_tests" + str(conf_experimentconf_experiment_tests_sleeps))
-    print("conf_experiment_heading" + str(conf_experiment_heading))
-    print("conf_experiment_speed" + str(conf_experiment_speed))
-    print("")
-    print("")
+    print(" ")
+#    print("conf_experiment_sleeps" + str(conf_experiment_sleeps))
+#    print("conf_experiment_high" + str(conf_experiment_high))
+#    print("conf_experiment_distance_between_tests" + str(conf_experiment_distance_between_tests))
+#    print("conf_experiment_tests" + str(conf_experiment_tests_sleeps))
+#    print("conf_experiment_heading" + str(conf_experiment_heading))
+#    print("conf_experiment_speed" + str(conf_experiment_speed))
+    print(" ")
+    print(" ")
 
 
 
